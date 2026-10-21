@@ -2,10 +2,20 @@
 
 Kern's working notes for a project, kept at `.kern/record.md` in the project root. Write it yourself from the brief, the product and the method. Never show it to the user as a form or ask them to fill it in. Update it whenever the user redirects you, and read it again before each new screen in a long session.
 
-Mark where each decision came from: **user** (they said it), **inherited** (the existing product has it) or **kern** (you decided it). Never present a Kern decision as something the user chose.
+Mark where each decision came from: **user** (they said it, including answers to the brief), **inherited** (the existing product has it) or **kern** (you decided it). Never present a Kern decision as something the user chose, and never quietly replace a **user** decision.
 
 ```markdown
 # <Product> — Kern record
+
+## Brief (user)
+Asked: (the questions, as asked)
+The picture in their head:
+References and what they like about them:
+The one thing (do or feel in ten seconds):
+How loud:
+Never:
+Assets they have:
+Skipped because: (already answered, or they said "you decide")
 
 ## Locate
 Surface:

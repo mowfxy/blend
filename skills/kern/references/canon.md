@@ -40,7 +40,7 @@ These are the principles Kern never drops. They hold on every platform and at ev
 
 **15. One idea, protected.** A design carries one memorable decision, the thesis made visible. Everything else gets quieter so that idea reads. Three medium ideas are weaker than one strong one, and spectacle is spent in one place or not at all.
 
-**16. The register fits the subject.** Decide how loud the work should be from what it offers and how it is used ([register](register.md)), then commit to it. A sensory subject with no pictures and nothing moving is as wrong as spectacle on a tool used all day. Every rich element is the product's own material, carries something a still cannot, and is made convincing.
+**16. The register fits the subject and the person.** Decide how loud the work should be from what the person asked for, what the product offers and how it is used ([register](register.md)), then commit to it. A sensory subject with no pictures and nothing moving is as wrong as spectacle on a tool used all day. Every rich element is the product's own material, carries something a still cannot, and is made convincing.
 
 **17. Specific over safe.** Every choice should belong to this product. If a choice could be lifted onto an unrelated product unchanged, it is a default, and defaults are what the [median](median.md) is made of. This includes the icons and buttons: a stock set at its defaults is a default ([kern-controls](../../kern-controls/SKILL.md)).
 

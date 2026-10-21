@@ -5,7 +5,7 @@ description: Kern specialist for reviewing, rating and auditing rendered design 
 
 # Kern Critique
 
-Judge the pixels, not the code. You wrote the code, so you will read your intentions into it, while the screenshots only show what is there. Judge against the brief and the record, not against your favourite style. An audit request produces findings and changes nothing. A build request includes the fixes.
+Judge the pixels, not the code. You wrote the code, so you will read your intentions into it, while the screenshots only show what is there. Judge against what the person asked for, the brief and the record, not against your favourite style. The first question is always whether this is what they pictured. An audit request produces findings and changes nothing. A build request includes the fixes.
 
 ## How to look
 
@@ -43,6 +43,10 @@ Score each criterion from 0 to 10, then compute the weighted mean. Weights depen
 | **Craft** | Optical alignment, crops, consistent strokes and radii, no accidental gaps | 10 | 5 | 5 | 10 |
 | **Distinctiveness** | Far from the median, the register spent, controls and materials that could only belong here, a defended risk, no near-duplicate in the ledger | 5 | 5 | 5 | 0 |
 
+### What the person chose
+
+Choices marked **user** in the record are not defects. A median element the person asked for does not lower Distinctiveness and does not trigger the median caps; judge instead how well it was executed and whether real material stands behind it. Not matching what they described lowers Thesis, whatever else is good.
+
 ### Caps
 
 These limit the total, whatever the individual scores:
@@ -52,6 +56,7 @@ These limit the total, whatever the individual scores:
 - **Invented proof** (fake customers, quotes, logos or statistics) caps the total at **5.0**.
 - **Placeholder content** (lorem ipsum, grey boxes, "Image here") caps the total at **5.0**.
 - **No identifiable thesis** caps Thesis and Distinctiveness at **5**.
+- **The result ignores what the person described in the brief** caps Thesis at **5**.
 - **More than half of the record's median survives unexamined** caps Distinctiveness at **4**.
 - **A stock icon set at its defaults or a component kit's default buttons** on a public page or a product with a composed or louder register caps Craft and Distinctiveness at **6**.
 - **A register mismatch** (an expressive or spectacular brief rendered at silent or composed volume, or spectacle on a silent tool) caps Thesis at **6**.

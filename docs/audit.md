@@ -86,3 +86,15 @@ An audit of Kern 1.0 on 21 October 2026 found that it had fixed convergence on *
 | Imagery and 3D craft | 6.5 | 8.5 | Source list versus a sourcing recipe, treatments, data art and convincing-3D guidance |
 | Verification tooling | 7.0 | 7.5 | Seven new audit rules, including the first FAIL for motion safety |
 | Examples | 7.5 | 8.5 | Two quiet examples versus three at different registers, all rich elements verified in a browser |
+
+## Kern 1.2: the brief
+
+Kern 1.0 and 1.1 told the agent never to interview the person about taste. That kept the agent from offering style menus, but it also meant the agent never learnt what the person already pictured. A design that is distinctive but is not what they imagined is still a miss, and the person's own picture is the most specific input a design can have.
+
+**Changes**
+
+- **[The brief](../skills/kern/references/brief.md):** a new method step 0. Before any new design, redesign or big restyle, the agent asks one round of three to five short questions: the look or feel they picture, references and what they like about them, what someone should do or feel in ten seconds, how loud it should be, what they never want, and what assets they have. Options are written from the brief rather than a catalogue, the recommendation comes first, and "you decide" is always available. The round is skipped for narrow fixes, for anything already answered in the request, repository or record, and when the person says "just build it".
+- **The person outranks Kern.** Answers are recorded as **user** decisions. If the person asks for something on the median list, Kern builds it at full craft with real material behind it, and may raise one concern in one sentence. The register follows their "how loud" answer.
+- **Critique judges fit first.** User-chosen median elements no longer lower Distinctiveness or trigger the median caps; ignoring what the person described caps Thesis at 5.
+- **Hand-back** says which decisions were theirs and which were Kern's, and asks whether it matches what they pictured.
+- Two new eval briefs test both paths: asking a good first round, and respecting a "just build it" request for a style Kern would not have chosen.

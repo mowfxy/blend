@@ -8,8 +8,9 @@ It covers websites, web apps, dashboards, desktop apps (macOS, Windows, Linux; E
 
 ## Why outputs differ
 
-Most design prompts converge, because every model reaches for the same average answer. Kern works against that in five ways:
+Most design prompts converge, because every model reaches for the same average answer. Kern works against that in six ways:
 
+- **It asks you first.** What you picture is the most specific fact there is. A short brief before any new design means the result starts from your taste, not the model's average.
 - **It derives instead of selecting.** Each design starts from the brief's own specific facts, finds the tension in them, and writes a one-sentence thesis that has to fail when you swap in a competitor's name.
 - **It names the median.** The agent writes down what an average model would ship for this exact brief, then treats it as presumed wrong.
 - **It decides how loud to be.** A tax tool and a festival site should not differ only in accent colour. Kern reads the [register](skills/kern/references/register.md) from the brief, silent to spectacular, and picks the rich materials the product is actually made of: photography, archival plates, ASCII and text-mode animation, live 3D, generative data art, sound, play. Each one has to pass a relevance test, and then the agent commits to it.
@@ -47,13 +48,13 @@ Use $kern to build a Tauri app for logging grape deliveries at a winery weighbri
 Use $kern-critique to rate this dashboard before and after the redesign.
 ```
 
-Kern does not interview you about taste. It decides, builds, and tells you the thesis in a sentence or two so you can redirect it. It writes its working notes to `.kern/` in your project, and nowhere else.
+Before a new design, Kern asks you a short round of questions: the look you already picture, sites you love, what someone should do in ten seconds, how loud it should be, what you never want, and what assets you have. The options are written for your project, its recommendation comes first, and "you decide" is always there. What you answer outranks Kern's own taste; it fills the gaps and finishes the craft. Then it builds and tells you which decisions were yours and which were its own. It writes its working notes to `.kern/` in your project, and nowhere else.
 
 ## The suite
 
 | Skill | Owns |
 |---|---|
-| [kern](skills/kern/SKILL.md) | The method, [canon](skills/kern/references/canon.md), [eye](skills/kern/references/eye.md), [median](skills/kern/references/median.md), [register](skills/kern/references/register.md), routing, tools |
+| [kern](skills/kern/SKILL.md) | The method, the [brief](skills/kern/references/brief.md), [canon](skills/kern/references/canon.md), [eye](skills/kern/references/eye.md), [median](skills/kern/references/median.md), [register](skills/kern/references/register.md), routing, tools |
 | [kern-web](skills/kern-web/SKILL.md) | Landing pages, marketing sites, portfolios, editorial and event pages |
 | [kern-product](skills/kern-product/SKILL.md) | Web apps, SaaS, forms, records, settings, every UI state |
 | [kern-dashboard](skills/kern-dashboard/SKILL.md) | Dashboards built around decisions, charts, data colour, tables |

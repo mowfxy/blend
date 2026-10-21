@@ -2,7 +2,7 @@
 
 The median is what models ship when nothing in the brief pushes them anywhere: the average of everything they have seen. It is competent, and that is exactly why it is dangerous. It looks finished, so nobody questions it, and because every model converges on it, products built with AI start to look like one product.
 
-This file describes the median so you can recognise it in your own first instincts. **Nothing here is banned.** Any item can be right when the thesis arrives at it independently and you can say why in one sentence. The failure is reaching for it by reflex. In step 5 of the [method](method.md), write this brief's own median in the record, using this file as a prompt rather than a checklist.
+This file describes the median so you can recognise it in your own first instincts. **Nothing here is banned,** and none of it overrides the person: if they ask for something on this list, build it at full craft. Any item can be right when the thesis arrives at it independently and you can say why in one sentence. The failure is reaching for it by reflex. In step 5 of the [method](method.md), write this brief's own median in the record, using this file as a prompt rather than a checklist.
 
 The median moves. When a remedy becomes popular, models adopt it wholesale and it becomes the new median. "Warm editorial" was the cure for purple gradients until cream-and-terracotta with a serif headline became the most recognisable generated look of all. Treat anything that has become a fashion as suspect, including fashions that started as advice like this.
 

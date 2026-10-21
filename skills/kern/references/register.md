@@ -13,7 +13,7 @@ Both are the same mistake: the register came from habit instead of the subject.
 
 ## Reading the register from the brief
 
-Write one line for each in the record, then name the register.
+If the person told you how loud it should be in [the brief](brief.md), that is the register; use the questions below only to choose its materials. Otherwise write one line for each in the record, then name the register.
 
 1. **What is being offered: an experience or a utility?** If people come for the experience itself (food, travel, music, fashion, games, art, events, places, objects people covet), the design has to carry some of that experience. If they come to get a job done, the design gets out of the way.
 2. **How often, and in what state?** Seen once by a stranger in a browser tab can afford a first impression. Used for six hours a day cannot afford anything that is not information. A worried person (a clinic, a bank, an outage) needs calm before anything else.

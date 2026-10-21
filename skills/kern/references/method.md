@@ -1,6 +1,12 @@
 # The method
 
-The full version of the eight steps in [SKILL.md](../SKILL.md). Each step produces something you write in `.kern/record.md`. The record is your working memory across a long task and the thing every specialist reads, so keep it current.
+The full version of the steps in [SKILL.md](../SKILL.md). Each step produces something you write in `.kern/record.md`. The record is your working memory across a long task and the thing every specialist reads, so keep it current.
+
+## 0. Ask
+
+Run [the brief](brief.md) before any new design: one round of three to five questions about the picture in their head, references, the one thing, how loud, what they never want and what assets they have. Options are written from this brief, your recommendation first, with "you decide" always available. Write the answers under **Brief** in the record, marked **user**.
+
+Everything after this step derives from their answers first and your judgment second. If they described a look, ground and thesis make *that look* specific and finished; they do not replace it. If they said "you decide", the method runs exactly as below.
 
 ## 1. Locate
 
@@ -49,11 +55,11 @@ The thesis is not decoration and is never shown to users. It is the reason behin
 
 Write this brief's median in the record, as specifically as you can: *"An average model would ship Inter, a white background with an indigo accent, a 240 px icon sidebar, KPI cards across the top, rounded cards with 12 px corners and soft shadows, a default title bar, and fade-ins."* Use [median](median.md) to prompt yourself.
 
-From now on, every median element is presumed wrong. Keep one only when the thesis independently arrives at it, and record the reason. For example: *"SF Pro and the system list style: this is a macOS utility and native text is the thesis."*
+From now on, every median element is presumed wrong as a default. Keep one when the person asked for it (mark it **user**), or when the thesis independently arrives at it, and record the reason. For example: *"SF Pro and the system list style: this is a macOS utility and native text is the thesis."*
 
 ## 6. Register
 
-Decide how loud the product should be before deriving any token, because the register changes what the tokens are for. Follow [the register](register.md): answer the five questions (experience or utility, frequency and state, how sensory the subject is, what the domain's best artefacts look like, what you can make convincing), name the register, and go through the richness inventory.
+Decide how loud the product should be before deriving any token, because the register changes what the tokens are for. If the person answered the brief's "how loud" question, that is the register; otherwise follow [the register](register.md): answer the five questions (experience or utility, frequency and state, how sensory the subject is, what the domain's best artefacts look like, what you can make convincing), name the register, and go through the richness inventory.
 
 Write it like this:
 
@@ -116,7 +122,7 @@ Render and look ([kern-critique](../../kern-critique/SKILL.md)): score, fix the 
 
 ## Three runs of the same method
 
-The method does not produce a look. These three products went through the same nine steps.
+The method does not produce a look. These three products went through the same steps.
 
 - **A desktop app for a small vineyard to log harvest weights.** Register: silent. Ground: refractometer readings, crate tags with grower numbers, a weighbridge ticket printer, cold wet mornings, gloves. Tension: fast entry with cold hands, but records that must stand up in a cooperative dispute. Thesis: *the weighbridge ticket*. Result: large tabular numerals, a narrow receipt-like record column, high-contrast ink on an off-white that matches the ticket stock, oversized hit areas despite being a desktop app, the toolbar merged into the ticket header, and no colour except the stamp-red "disputed" state.
 - **A website for a night-time radio show that plays field recordings.** Register: expressive, through sound and one live element rather than pictures. Ground: microphones in the rain, the hour the show airs, listeners on night shifts, recordings named by place and time. Tension: atmospheric, but the next broadcast time must be readable in a second. Thesis: *a station clock in a dark studio*. Result: a dark blue-black field, one enormous countdown as the dominant element, recordings listed as place and time pairs in a mono-width index, a single live element (what is on air right now), and no imagery beyond a waveform of the current recording, drawn live from the audio while it plays.

@@ -13,6 +13,10 @@ Write the page as a list of **claims with proof**, one line per section, in the 
 
 The proof must be something a visitor can inspect: the real product working, the actual menu, real photographs of the place, a piece of the work, a sample they can try, or a clearly labelled demonstration. Never invent customers, quotes, logos, press or numbers. Missing proof calls for a demonstration, not a fabrication.
 
+## Ask first
+
+A public page is the surface where people most often already picture the result. Run [the brief](../kern/references/brief.md) before composing: the look they imagine, sites they love, the one action, how loud, what they never want. Their picture comes first; Kern makes it specific and finished.
+
 ## The register decides the page
 
 Public pages range further than any other surface: a clinic's opening hours and a festival's line-up are both "a website". Set the [register](../kern/references/register.md) before composing, and make it visible from the first screen to the footer. A silent page is typography, real facts and impeccable states. An expressive page is led by pictures, type as image and a real signature motion. A spectacular page is an encounter with the subject: terrain to fly over, an object to turn, a pattern to play.

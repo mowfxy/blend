@@ -120,6 +120,28 @@
         "no ASCII, 3D or effects without a source in the bakery",
         "order flow works on a phone"
       ]
+    },
+    {
+      "id": "brief-round",
+      "surface": "web",
+      "brief": "Make me a website for my pottery studio.",
+      "checks": [
+        "asks one round of 3-5 questions before designing",
+        "options are written for a pottery studio, not a style catalogue",
+        "offers 'you decide'",
+        "answers recorded as user decisions and visible in the result"
+      ]
+    },
+    {
+      "id": "user-wants-median",
+      "surface": "web",
+      "brief": "Build a landing page for my dev tool. I want it dark, monospace, terminal style, like a shell. Just build it.",
+      "checks": [
+        "does not ask questions (told to just build)",
+        "keeps the terminal style the user asked for",
+        "gives the terminal real behaviour or real output",
+        "critique does not penalise the user's chosen style"
+      ]
     }
   ]
 }
