@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Ios"
+  short_description: "iPhone and iPad apps"
+  default_prompt: "Use $kern-ios on this. Derive the design from the product itself, state the thesis, and finish in the render."

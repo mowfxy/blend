@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Color"
+  short_description: "Colour systems from a real source"
+  default_prompt: "Use $kern-color on this. Derive the design from the product itself, state the thesis, and finish in the render."

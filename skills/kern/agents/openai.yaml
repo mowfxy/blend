@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern"
+  short_description: "Taste and method for any interface"
+  default_prompt: "Use $kern on this. Derive the design from the product itself, state the thesis, and finish in the render."

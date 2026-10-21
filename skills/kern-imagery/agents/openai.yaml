@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Imagery"
+  short_description: "Imagery, icons, 3D, characters"
+  default_prompt: "Use $kern-imagery on this. Derive the design from the product itself, state the thesis, and finish in the render."

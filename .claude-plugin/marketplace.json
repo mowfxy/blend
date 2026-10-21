@@ -1,0 +1,15 @@
+{
+  "name": "m4labs",
+  "description": "Design tools from M4 Labs.",
+  "owner": {
+    "name": "M4 Labs",
+    "url": "https://m4labs.xyz"
+  },
+  "plugins": [
+    {
+      "name": "kern",
+      "source": "./",
+      "description": "A design practice for AI agents: taste, method and craft for every kind of interface."
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Media"
+  short_description: "Slides, email, documents, print"
+  default_prompt: "Use $kern-media on this. Derive the design from the product itself, state the thesis, and finish in the render."

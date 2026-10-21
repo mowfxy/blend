@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Motion"
+  short_description: "Motion from the product's physics"
+  default_prompt: "Use $kern-motion on this. Derive the design from the product itself, state the thesis, and finish in the render."

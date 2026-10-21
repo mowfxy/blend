@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Desktop"
+  short_description: "Native-feeling desktop apps, seamless title bars"
+  default_prompt: "Use $kern-desktop on this. Derive the design from the product itself, state the thesis, and finish in the render."

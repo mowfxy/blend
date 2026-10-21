@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Type"
+  short_description: "Typography derived from reading conditions"
+  default_prompt: "Use $kern-type on this. Derive the design from the product itself, state the thesis, and finish in the render."

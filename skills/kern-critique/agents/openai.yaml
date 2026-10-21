@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Critique"
+  short_description: "Kern Score ratings and reviews"
+  default_prompt: "Use $kern-critique on this. Derive the design from the product itself, state the thesis, and finish in the render."

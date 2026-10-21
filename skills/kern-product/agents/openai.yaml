@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Product"
+  short_description: "Web apps and task flows"
+  default_prompt: "Use $kern-product on this. Derive the design from the product itself, state the thesis, and finish in the render."

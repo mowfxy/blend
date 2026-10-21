@@ -1,0 +1,103 @@
+# The method
+
+The full version of the eight steps in [SKILL.md](../SKILL.md). Each step produces something you write in `.kern/record.md`. The record is your working memory across a long task and the thing every specialist reads, so keep it current.
+
+## 1. Locate
+
+Write one line for each:
+
+- **Surface:** marketing page, product app, dashboard, desktop app, phone app, watch, TV, terminal, deck, email, document.
+- **Platform and stack:** web/React, Electron, Tauri, SwiftUI, UIKit, Compose, Flutter, React Native, WinUI, GTK, a terminal library, and so on.
+- **Device and posture:** a laptop at a desk, a phone in one hand while walking, a wall display seen from four metres, a projector in a meeting room, a watch glanced at for two seconds.
+- **Frequency and stakes:** visited once, used weekly, or worked in all day? Is a mistake an annoyance, a lost sale or a medical error?
+
+These four lines decide most of the grammar before taste enters. A tool used all day needs density, keyboard paths and calm. A page visited once needs a strong first impression and one clear action. A watch needs one fact at a glance. Load the platform specialist now.
+
+## 2. Ground
+
+Collect, at real length:
+
+- **The specimen.** The longest important heading, a normal paragraph, the longest label, the biggest and smallest numbers, a real record, a real error message, names in the languages and scripts the product supports.
+- **The people.** Who they are, what they are doing just before and just after, what they fear getting wrong, and what words they use. The words matter most, because the product's labels should be their words.
+- **The material culture.** These are the objects, documents, tools, places, marks and rituals of the domain. A veterinary clinic has dosage charts, kennel cards, a weighing scale, appointment carbon books and the smell of disinfectant. A synthesiser maker has patch cables, front-panel legends, knurled knobs and oscilloscope traces. Collect at least five artefacts.
+- **The constraints.** Brand assets, an existing design system, accessibility requirements, performance budgets, and things the user has explicitly asked for or ruled out.
+
+Write the ten to fifteen most specific facts as a list. This list is the most important input to everything that follows. Generic facts ("users want speed") produce generic design. Specific facts ("dispatchers keep one eye on the radio and one hand on the keyboard") produce specific design.
+
+## 3. Tension
+
+Name the two forces the design must hold together. Examples:
+
+- A field-service app: *dense enough for a technician who knows it cold, calm enough for one on their first day*.
+- A pension calculator: *serious enough to trust with your retirement, light enough that a 25-year-old finishes it*.
+- A DJ set planner: *nocturnal and expressive, but readable in a dark booth at 2 a.m.*
+
+If you cannot find a tension, the brief is probably simple. That is fine, but say so, and keep the design correspondingly quiet.
+
+## 4. Thesis
+
+*"This should feel like [something concrete from the ground], because [it resolves the tension]."*
+
+- *"The dispatch board should feel like the laminated wall map in the depot, because it has to hold forty moving things while staying readable from across the room."*
+- *"The pension calculator should feel like a well-kept paper passbook, because a quiet, tabular, stamped record is how people already trust a bank with money."*
+
+Run the **swap test**: replace the product with its nearest competitor and see if the thesis still works. If it does, it describes the category, not this product. Run the **adjective test**: rewrite any sentence that depends on clean, modern, sleek, premium, minimal, bold or elegant.
+
+The thesis is not decoration and is never shown to users. It is the reason behind every decision in step 6.
+
+## 5. Median
+
+Write this brief's median in the record, as specifically as you can: *"An average model would ship Inter, a white background with an indigo accent, a 240 px icon sidebar, KPI cards across the top, rounded cards with 12 px corners and soft shadows, a default title bar, and fade-ins."* Use [median](median.md) to prompt yourself.
+
+From now on, every median element is presumed wrong. Keep one only when the thesis independently arrives at it, and record the reason. For example: *"SF Pro and the system list style: this is a macOS utility and native text is the thesis."*
+
+## 6. Derive the system
+
+Derive each token from the thesis and the ground. Write the source and the reason beside it. The craft specialists hold the detail for each.
+
+**Colour** ([kern-color](../../kern-color/SKILL.md)). Name a **source**, which is a real object or place in the domain, and take the palette's character from it: hue, saturation, how many inks, how warm the neutrals are. *"Source: the depot map's laminated buff paper, its black road lines and the red route marker."* Build neutrals and accents as OKLCH ramps (`kern.mjs palette`) and check every text and boundary pair for contrast (`kern.mjs contrast`). Decide the colour stance (whether colour fills whole fields or appears as small accents) and how much of each screen the accent may occupy.
+
+**Type** ([kern-type](../../kern-type/SKILL.md)). Start from the reading conditions: distance, duration, density, script coverage and numerals. Then consider the voice: what would this domain's signage, documents or instruments be set in? Generate three candidates of different kinds, set the real specimen in each, and choose in the render. On native platforms, the system face is often the right choice for UI text, and identity goes into a display or content face.
+
+**Space and density.** Choose a base unit and a scale. Frequency sets density: all-day tools are compact (rows of 28–36 px on desktop), occasional flows are comfortable, and marketing pages pace by screen. Write the row height, the control height, the gutters and the section rhythm.
+
+**Shape.** Radius and stroke come from the material: crisp and square for instruments and ledgers, soft for objects meant to be held, and on Apple platforms the system's own continuous corners. Use one stroke weight for icons and boundaries, and nest corners concentrically.
+
+**Depth.** Decide the elevation model: flat with tone steps, the platform's materials, or a single light source with real shadows. Pick one and apply it everywhere.
+
+**Motion** ([kern-motion](../../kern-motion/SKILL.md)). Derive the physics from the product. A precision tool moves fast and exactly. A calm reading app moves slowly with long settles. A playful consumer app can overshoot, on content but not on chrome. Write the duration and easing tokens and the one signature motion, if there is one.
+
+**Chrome.** Decide how the platform frame meets the content: the title bar treatment and toolbar style on desktop, system bar behaviour and navigation bar appearance on mobile, the browser `theme-color` and scrollbar colour on the web. Never leave chrome as a default ([canon 6](canon.md)).
+
+**The defended risk.** Name the one decision a cautious designer would not have made. It must follow from the thesis. Examples: *"The route marker red is used as a full-bleed surface for the active job, not as a small badge."* *"Numerals are set in a condensed face at 2× body size in every table."*
+
+Record the **fingerprint**: platform, structure, type families, colour source and stance, density, shape, motion signature, imagery medium and the risk. Then run:
+
+```bash
+node <kern>/scripts/kern.mjs ledger check --fingerprint .kern/fingerprint.json
+node <kern>/scripts/kern.mjs ledger add --fingerprint .kern/fingerprint.json
+```
+
+`<kern>` is this skill's folder. `check` compares the fingerprint against every project on this machine and flags near-duplicates. When an unrelated product scores too close, change at least three axes and record why. Related work for the same brand is supposed to match.
+
+## 7. Compose
+
+- **Hardest screen first.** Start with the densest table, the longest form, the most stateful view or the screen with the most real content. Easy screens follow from a resolved hard one, but the reverse never holds.
+- **One dominant element per view**, decided before components.
+- **Real content in place** from the specimen.
+- **Every state for that screen** before the next screen: empty, loading, error and overflow.
+- **Each size as its own composition:** phone, tablet, narrow window, wide window, as the platform requires.
+- **Chrome integrated from the first build**, not added at the end.
+
+## 8. Critique and kern
+
+Render and look ([kern-critique](../../kern-critique/SKILL.md)): score, fix the three largest problems, and look again, up to three rounds. Then do the kerning pass from [the eye](eye.md#seeing-finish). Run `kern.mjs audit` on the source for measurable tells and chrome integration, and fix or defend each finding.
+
+## Two runs of the same method
+
+The method does not produce a look. These two products went through the same eight steps.
+
+- **A desktop app for a small vineyard to log harvest weights.** Ground: refractometer readings, crate tags with grower numbers, a weighbridge ticket printer, cold wet mornings, gloves. Tension: fast entry with cold hands, but records that must stand up in a cooperative dispute. Thesis: *the weighbridge ticket*. Result: large tabular numerals, a narrow receipt-like record column, high-contrast ink on an off-white that matches the ticket stock, oversized hit areas despite being a desktop app, the toolbar merged into the ticket header, and no colour except the stamp-red "disputed" state.
+- **A website for a night-time radio show that plays field recordings.** Ground: microphones in the rain, the hour the show airs, listeners on night shifts, recordings named by place and time. Tension: atmospheric, but the next broadcast time must be readable in a second. Thesis: *a station clock in a dark studio*. Result: a dark blue-black field, one enormous countdown as the dominant element, recordings listed as place and time pairs in a mono-width index, a single live element (what is on air right now), and no imagery beyond a waveform of the current recording.
+
+Do not reuse either outcome. They show reasoning, not templates.

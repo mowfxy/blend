@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Android"
+  short_description: "Android apps, edge to edge"
+  default_prompt: "Use $kern-android on this. Derive the design from the product itself, state the thesis, and finish in the render."

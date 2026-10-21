@@ -1,0 +1,150 @@
+<title>Kern Scorecard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a printer's proof sheet. One big before→after pair, then a ruled score table read like a proof with blue-pencil marks. */
+:root {
+  --paper: #f4f5f2;
+  --sheet: #fbfbf9;
+  --ink: #1b1e24;
+  --ink-2: #555b63;
+  --rule: #d9dbd5;
+  --v0: #b9bcb4;
+  --pencil: #2c74c4;
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --text: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #15171b; --sheet: #1c1f24; --ink: #e9eae6; --ink-2: #a3a8ae; --rule: #33373e; --v0: #4b5058; --pencil: #6fb0f2; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #15171b; --sheet: #1c1f24; --ink: #e9eae6; --ink-2: #a3a8ae; --rule: #33373e; --v0: #4b5058; --pencil: #6fb0f2; color-scheme: dark }
+
+body { background: var(--paper); color: var(--ink); font: 17px/1.55 var(--text); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 72px; display: grid; gap: 56px; }
+h1, h2 { font-family: var(--display); font-stretch: 112%; font-weight: 800; letter-spacing: -0.02em; line-height: 1; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.5rem; font-stretch: 100%; font-weight: 700; letter-spacing: -0.01em; }
+p { margin: 0; max-width: 64ch; }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.meta { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-2); letter-spacing: 0.02em; }
+
+/* Opening: the pair */
+.open { display: grid; gap: 28px; }
+.open h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); }
+.pair { display: flex; align-items: flex-end; gap: clamp(16px, 4vw, 48px); flex-wrap: wrap; }
+.score { display: grid; gap: 6px; }
+.score b { font-family: var(--display); font-weight: 800; font-stretch: 62%; font-size: clamp(6rem, 22vw, 13rem); line-height: 0.8; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.score.v0 b { color: var(--v0); }
+.score span { font-family: var(--mono); font-size: 0.85rem; color: var(--ink-2); }
+.kernmark { align-self: center; display: grid; justify-items: center; gap: 6px; color: var(--pencil); font-family: var(--mono); font-size: 0.85rem; padding-bottom: 28px; }
+.kernmark svg { width: 64px; height: 28px; }
+.lede { font-size: 1.15rem; }
+
+/* Score table */
+.board { background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 640px; }
+th, td { text-align: left; vertical-align: top; padding: 14px 18px; border-bottom: 1px solid var(--rule); }
+thead th { font-family: var(--mono); font-weight: 500; font-size: 0.75rem; color: var(--ink-2); letter-spacing: 0.06em; text-transform: uppercase; }
+tbody tr:last-child td { border-bottom: 0; }
+td.crit { font-family: var(--display); font-weight: 600; font-stretch: 95%; width: 26%; line-height: 1.25; }
+td.bars { width: 34%; }
+.bar { position: relative; height: 10px; background: color-mix(in oklab, var(--rule) 55%, transparent); border-radius: 1px; margin: 5px 0 9px; }
+.bar i { position: absolute; inset: 0 auto 0 0; border-radius: 1px; }
+.bar.v0 i { background: var(--v0); }
+.bar.k i { background: var(--ink); }
+.nums { display: flex; gap: 14px; font-family: var(--mono); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.nums .d { color: var(--pencil); }
+td.ev { color: var(--ink-2); font-size: 0.95rem; }
+.note { font-style: italic; color: var(--pencil); }
+tfoot td { font-family: var(--display); font-weight: 800; border-top: 2px solid var(--ink); border-bottom: 0; }
+
+/* Findings */
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px 56px; }
+.cols > section { display: grid; gap: 18px; align-content: start; min-width: 0; }
+ol, ul { margin: 0; padding-left: 1.2em; display: grid; gap: 12px; }
+li::marker { font-family: var(--mono); color: var(--pencil); }
+code { font-family: var(--mono); font-size: 0.85em; background: color-mix(in oklab, var(--rule) 50%, transparent); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+.callout { border-left: 3px solid var(--pencil); padding: 4px 0 4px 18px; display: grid; gap: 10px; }
+footer { color: var(--ink-2); font-size: 0.9rem; display: grid; gap: 6px; }
+</style>
+
+<div class="wrap">
+  <header class="open">
+    <div class="meta">M4 Labs · Kern 1.0 · audit of github.com/mowfxy/blend · 21 October 2026</div>
+    <h1>Kern scorecard</h1>
+    <div class="pair" aria-label="Overall score: previous suite 4.1, Kern 8.3">
+      <div class="score v0"><b>4.1</b><span>previous suite (v0)</span></div>
+      <div class="kernmark" aria-hidden="true">
+        <svg viewBox="0 0 64 28" fill="none"><path d="M4 14h50M44 5l10 9-10 9" stroke="currentColor" stroke-width="2.5"/></svg>
+        +4.2
+      </div>
+      <div class="score"><b>8.3</b><span>Kern</span></div>
+    </div>
+    <p class="lede">Both suites were scored as design systems for AI agents on ten criteria from 0 to 10. The scores come from reading both suites in full and from measuring the repository. They are expert ratings, not blind tests of generated designs. The repository's <code>evals/</code> folder has the protocol for those tests.</p>
+  </header>
+
+  <div class="board">
+    <table>
+      <thead><tr><th>Criterion</th><th>v0 → Kern</th><th>Evidence</th></tr></thead>
+      <tbody id="rows"></tbody>
+      <tfoot><tr><td>Overall (mean)</td><td><div class="nums"><span>4.1</span><span>8.3</span><span class="d">+4.2</span></div></td><td></td></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="cols">
+    <section>
+      <h2>Why it repeated itself</h2>
+      <ol>
+        <li>For public pages, a script dealt 3 of the same 20 directions and the model picked one. Every install shares that library, so every model picks among the same 20.</li>
+        <li>Away from public pages, the model "sketched three directions" from fixed menus: 11 silhouettes, 8 colour stances, 10 imagery media.</li>
+        <li>Hard house rules forced one look onto everything: no gradients, shadows, mono or hairlines; at least 4 photos; at least 8 moving elements.</li>
+        <li>It was web only. The old suite never mentions title bars, Electron, Tauri, SwiftUI, iOS or Android.</li>
+        <li>It contradicted itself. It said taste is "not a list of banned effects" and then enforced a list of banned effects as FAILs.</li>
+      </ol>
+    </section>
+    <section>
+      <h2>Why <code>.taste-skill</code> kept appearing</h2>
+      <div class="callout">
+        <p>The public-page specialist bundled a third-party toolkit's scripts without renaming them. <code>draw.mjs</code> writes <code>.taste-skill/</code> in your project and <code>~/.taste-skill/history.json</code> in your home folder. <code>inspect.mjs</code> writes <code>.taste-skill/inspect/</code>.</p>
+        <p>Kern writes only to <code>.kern/</code>, and its validator fails the build if another suite's name shows up in a shipped skill. You can delete the old <code>m4labs-site/.taste-skill/</code> folder.</p>
+      </div>
+      <h2>What Kern gave up</h2>
+      <ul>
+        <li>The headless-browser inspector that measured headline line counts and fonts at three widths. Kern checks renders through screenshots and the critique.</li>
+        <li>The script that searched open picture collections.</li>
+        <li>The numbers from the 247-site study. Kern keeps the principles that apply beyond websites.</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>Old suite: 103 files, 2.9 MB, about 153 KB of guidance loaded for a web build. Kern: 16 skills, about 0.18 MB, about 88 KB loaded for a web build.</p>
+    <p>Full write-up: <code>docs/audit.md</code> in the repository.</p>
+  </footer>
+</div>
+
+<script>
+const rows = [
+  ["Taste ownership (judgment, not menus)", 4.0, 8.0, "v0 dealt 3 of 20 fixed directions. Kern has no direction library and derives each design from the brief."],
+  ["Output divergence", 4.0, 7.5, "v0 had a shared library and one house look. Kern works from the brief's facts, rejects the median and checks a fingerprint ledger.", "Not yet measured on real outputs."],
+  ["Principles it never forgets", 6.0, 8.5, "v0 scattered them across 12 files. Kern has one 17-point canon, re-checked before every handback."],
+  ["Platform breadth", 2.5, 9.0, "v0 covered the web only. Kern covers 16 surfaces: web, product, dashboard, desktop, iOS, Android, watch, TV, car, visionOS, terminal, media and more."],
+  ["Desktop title bar fits the app", 0.0, 9.0, "Absent in v0. Kern adds a canon rule, title-bar code for 10 frameworks, audit checks and a score cap for a default title bar."],
+  ["Internal consistency", 4.5, 8.0, "v0 both banned effects and said it didn't, and both earned and required motion. Kern resolves both."],
+  ["Verification tooling", 7.5, 7.0, "v0's headless inspector was strong. Kern's audit reads source code only, and renders are judged by eye with the rubric."],
+  ["Context efficiency", 4.0, 8.0, "About 153 KB loaded for a web build in v0, about 88 KB in Kern. Kern also drops v0's 2.6 MB JSON library."],
+  ["Brand hygiene", 3.0, 9.0, "v0 left .taste-skill folders and a wrong clone URL. Kern uses only its own names, and the validator enforces it."],
+  ["Distribution", 5.0, 8.5, "v0 had a Codex-only installer. Kern ships a Claude Code plugin, an installer for both tools, legacy removal and tests."]
+];
+const tb = document.getElementById("rows");
+for (const [name, a, b, ev, note] of rows) {
+  const d = (b - a).toFixed(1);
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td class="crit">${name}</td>
+    <td class="bars"><div class="bar v0" aria-hidden="true"><i style="width:${a * 10}%"></i></div><div class="bar k" aria-hidden="true"><i style="width:${b * 10}%"></i></div>
+    <div class="nums"><span>${a.toFixed(1)}</span><span>${b.toFixed(1)}</span><span class="d">${d > 0 ? "+" : ""}${d}</span></div></td>
+    <td class="ev">${ev}${note ? ` <span class="note">${note}</span>` : ""}</td>`;
+  tb.appendChild(tr);
+}
+</script>

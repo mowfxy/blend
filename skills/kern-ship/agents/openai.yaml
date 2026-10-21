@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Ship"
+  short_description: "Shipping quality and launch checks"
+  default_prompt: "Use $kern-ship on this. Derive the design from the product itself, state the thesis, and finish in the render."

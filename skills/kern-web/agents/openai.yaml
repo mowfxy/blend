@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Web"
+  short_description: "Public pages from the product's own world"
+  default_prompt: "Use $kern-web on this. Derive the design from the product itself, state the thesis, and finish in the render."

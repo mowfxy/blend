@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Dashboard"
+  short_description: "Dashboards built around decisions"
+  default_prompt: "Use $kern-dashboard on this. Derive the design from the product itself, state the thesis, and finish in the render."

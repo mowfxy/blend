@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Screens"
+  short_description: "Watch, TV, car, kiosk, widgets, spatial"
+  default_prompt: "Use $kern-screens on this. Derive the design from the product itself, state the thesis, and finish in the render."
