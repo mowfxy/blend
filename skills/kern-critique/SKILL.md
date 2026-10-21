@@ -21,8 +21,10 @@ Take screenshots at the sizes people use: for the web, 1440, 768 and 390 wide; f
 8. **Platform.** Do the controls, navigation and gestures follow the platform? Is the density right for the posture?
 9. **Content.** Is it real and at full length? Is it honest, with no invented proof? Are the labels in the users' own words?
 10. **States.** Look at the empty, loading, error, overflow and focus states. Exercise at least the primary flow and one failure.
-11. **Motion** (watched, not screenshotted). Is the feedback immediate, the motion causal and settling, and does reduced motion still work?
-12. **Finish.** Do the kerning pass from [the eye](../kern/references/eye.md#seeing-finish).
+11. **Register.** Name the register the record chose and the one the render actually shows. Is a sensory subject shown, large, more than once? Is every rich element (3D, text-mode animation, generative art, sound) the product's own material, convincing, and fast? Is a utility quiet enough to work in all day? Too quiet for the subject is a defect, not taste.
+12. **Controls.** Are the icons one drawn or tuned family, and the buttons, inputs and toggles derived from the domain with every state designed? Could the controls be lifted onto an unrelated product unchanged?
+13. **Motion** (watched, not screenshotted). Is the feedback immediate, the motion causal and settling, and does reduced motion still work?
+14. **Finish.** Do the kerning pass from [the eye](../kern/references/eye.md#seeing-finish).
 
 ## The Kern Score
 
@@ -39,7 +41,7 @@ Score each criterion from 0 to 10, then compute the weighted mean. Weights depen
 | **Content** | Real, complete, honest, in the users' words | 15 | 10 | 5 | 15 |
 | **States and behaviour** | Every state designed, feedback immediate, keyboard and assistive tech work | 5 | 15 | 15 | 0 |
 | **Craft** | Optical alignment, crops, consistent strokes and radii, no accidental gaps | 10 | 5 | 5 | 10 |
-| **Distinctiveness** | Far from the median, a defended risk, no near-duplicate in the ledger | 5 | 5 | 5 | 0 |
+| **Distinctiveness** | Far from the median, the register spent, controls and materials that could only belong here, a defended risk, no near-duplicate in the ledger | 5 | 5 | 5 | 0 |
 
 ### Caps
 
@@ -51,6 +53,10 @@ These limit the total, whatever the individual scores:
 - **Placeholder content** (lorem ipsum, grey boxes, "Image here") caps the total at **5.0**.
 - **No identifiable thesis** caps Thesis and Distinctiveness at **5**.
 - **More than half of the record's median survives unexamined** caps Distinctiveness at **4**.
+- **A stock icon set at its defaults or a component kit's default buttons** on a public page or a product with a composed or louder register caps Craft and Distinctiveness at **6**.
+- **A register mismatch** (an expressive or spectacular brief rendered at silent or composed volume, or spectacle on a silent tool) caps Thesis at **6**.
+- **Rich elements that fail the relevance test** (decoration with no source in the product) cap Distinctiveness at **5**.
+- **Animation with no reduced-motion still** caps States at **6**.
 
 ### Calibration
 
@@ -86,4 +92,4 @@ When asked to compare versions, score both with the same weights, at the same si
 
 ## Measured checks
 
-Run `node ../kern/scripts/kern.mjs audit <src>` on the source. It flags measurable median tells (default faces, violet gradients, `transition: all`), missing `theme-color`, and desktop chrome omissions in Electron, Tauri, SwiftUI and WinUI. Its findings are evidence, not a verdict, because an authorised brand colour stays. Passing the audit does not mean the design is good. Only looking can tell you that.
+Run `node ../kern/scripts/kern.mjs audit <src>` on the source. It flags measurable median tells (default faces, violet gradients, `transition: all`), stock icon libraries and kit buttons, emoji icons, decorative loops, one entrance repeated everywhere, animation without reduced-motion handling, uncapped or always-running WebGL, missing `theme-color`, and desktop chrome omissions in Electron, Tauri, SwiftUI and WinUI. Its findings are evidence, not a verdict, because an authorised brand colour stays. Passing the audit does not mean the design is good. Only looking can tell you that.

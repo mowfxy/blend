@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wren Street Seed Library — borrow seed, grow it, bring some back</title>
+<meta name="description" content="A seed library in the Wren Street branch library: borrow a packet with your library card, grow it, and return saved seed. A fictional library built as a Kern example.">
+<meta name="theme-color" content="#231b16">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="plates/album-plate-6.webp">
+</head>
+<body>
+<header class="label-plate">
+  <p class="holder"><span>Seed library</span><span>Wren Street branch</span></p>
+  <nav aria-label="Sections">
+    <a href="#sow">Sow now</a>
+    <a href="#drawer">The drawer</a>
+    <a href="#borrow">Borrowing</a>
+    <a href="#visit">Visit</a>
+  </nav>
+</header>
+
+<main>
+  <section class="opening" aria-labelledby="h-open">
+    <div class="opening-text">
+      <h1 id="h-open">Borrow a packet. <em>Grow&nbsp;it.</em> Bring some seed&nbsp;back.</h1>
+      <p class="lede">Seven old varieties live in a card drawer by the returns desk. Take a packet on your library card, grow it in a pot or a plot, and let the best plant go to seed. Next autumn, the drawer is a little fuller.</p>
+    </div>
+    <figure class="hero-plate">
+      <img src="plates/album-plate-6.webp" width="1200" height="1542" alt="Chromolithograph of parsnip, carrot, squash, daikon radish, aubergine, potatoes, onion and two beetroots, one cut to show its rings" fetchpriority="high">
+      <figcaption>Album Vilmorin, plate 6, 1850s. The seed house printed one of these every year so growers could see what they were buying. <a href="https://commons.wikimedia.org/wiki/File:A_selection_of_vegetables,_including_aubergine,_onion,_carrot,_and_potato_-_Album_Vilmorin_(1850),_plate_6_-_BL.jpg">British Library, CC0</a>.</figcaption>
+    </figure>
+  </section>
+
+  <section class="sow" id="sow" aria-labelledby="h-sow">
+    <h2 id="h-sow">What goes in the ground in <span id="month-name">October</span>?</h2>
+    <div class="tabs" role="tablist" aria-label="Month" id="tabs"></div>
+    <p class="sow-result" id="sow-result" aria-live="polite"></p>
+  </section>
+
+  <section class="drawer" id="drawer" aria-labelledby="h-drawer">
+    <h2 id="h-drawer" class="sr-only">The drawer</h2>
+    <ol class="cards" id="cards">
+      <li class="card" id="no-017" data-no="017" data-sow="1,9,10,11" data-have="6" data-of="10">
+        <article aria-labelledby="t-017">
+          <header class="card-head"><span class="call">No.&thinsp;017</span><span class="drawer">Easy to save</span></header>
+          <figure class="plate"><img src="plates/ail_blanc.webp" width="1280" height="1271" alt="Engraving of white garlic, from Vilmorin-Andrieux, 1904" loading="lazy"></figure>
+          <div class="card-body">
+            <h3 id="t-017"><span class="fr">Ail blanc</span><span class="en">White garlic · <i>Allium sativum</i></span></h3>
+            <p class="months" aria-label="Sow in: February, October, November, December"><span class="months-k">Sow</span><span class="months-v" aria-hidden="true"><span class="" title="January">J</span><span class="on" title="February">F</span><span class="" title="March">M</span><span class="" title="April">A</span><span class="" title="May">M</span><span class="" title="June">J</span><span class="" title="July">J</span><span class="" title="August">A</span><span class="" title="September">S</span><span class="on" title="October">O</span><span class="on" title="November">N</span><span class="on" title="December">D</span></span></p>
+            <dl class="typed">
+              <div><dt>When</dt><dd>Plant cloves Oct–Dec or Feb.</dd></div>
+              <div><dt>Harvest</dt><dd>July.</dd></div>
+              <div><dt>Saving</dt><dd>Keep back your six fattest bulbs and replant their cloves.</dd></div>
+            </dl>
+            <div class="loan">
+              <p class="stock"><span class="have">6</span> of 10 packets in the drawer · 11 came back last year</p>
+              <button class="btn borrow" type="button">Borrow this packet</button>
+            </div>
+          </div>
+          <div class="stamp" aria-hidden="true"></div>
+        </article>
+      </li>
+      <li class="card" id="no-022" data-no="022" data-sow="2,3,4,5,8" data-have="9" data-of="12">
+        <article aria-labelledby="t-022">
+          <header class="card-head"><span class="call">No.&thinsp;022</span><span class="drawer">Easy to save</span></header>
+          <figure class="plate"><img src="plates/bourrache_officinale.webp" width="1280" height="1377" alt="Engraving of borage, from Vilmorin-Andrieux, 1904" loading="lazy"></figure>
+          <div class="card-body">
+            <h3 id="t-022"><span class="fr">Bourrache officinale</span><span class="en">Borage · <i>Borago officinalis</i></span></h3>
+            <p class="months" aria-label="Sow in: March, April, May, June, September"><span class="months-k">Sow</span><span class="months-v" aria-hidden="true"><span class="" title="January">J</span><span class="" title="February">F</span><span class="on" title="March">M</span><span class="on" title="April">A</span><span class="on" title="May">M</span><span class="on" title="June">J</span><span class="" title="July">J</span><span class="" title="August">A</span><span class="on" title="September">S</span><span class="" title="October">O</span><span class="" title="November">N</span><span class="" title="December">D</span></span></p>
+            <dl class="typed">
+              <div><dt>When</dt><dd>Sow Mar–Jun or Sep, where it is to flower.</dd></div>
+              <div><dt>Harvest</dt><dd>June to frost.</dd></div>
+              <div><dt>Saving</dt><dd>Shake the heads into a paper bag in late summer. It will self-seed whether you do or not.</dd></div>
+            </dl>
+            <div class="loan">
+              <p class="stock"><span class="have">9</span> of 12 packets in the drawer · 14 came back last year</p>
+              <button class="btn borrow" type="button">Borrow this packet</button>
+            </div>
+          </div>
+          <div class="stamp" aria-hidden="true"></div>
+        </article>
+      </li>
+      <li class="card" id="no-031" data-no="031" data-sow="3,4,5" data-have="2" data-of="12">
+        <article aria-labelledby="t-031">
+          <header class="card-head"><span class="call">No.&thinsp;031</span><span class="drawer">Easy to save</span></header>
+          <figure class="plate"><img src="plates/capucine_petite.webp" width="1280" height="1434" alt="Engraving of dwarf nasturtium, from Vilmorin-Andrieux, 1904" loading="lazy"></figure>
+          <div class="card-body">
+            <h3 id="t-031"><span class="fr">Capucine petite</span><span class="en">Dwarf nasturtium · <i>Tropaeolum minus</i></span></h3>
+            <p class="months" aria-label="Sow in: April, May, June"><span class="months-k">Sow</span><span class="months-v" aria-hidden="true"><span class="" title="January">J</span><span class="" title="February">F</span><span class="" title="March">M</span><span class="on" title="April">A</span><span class="on" title="May">M</span><span class="on" title="June">J</span><span class="" title="July">J</span><span class="" title="August">A</span><span class="" title="September">S</span><span class="" title="October">O</span><span class="" title="November">N</span><span class="" title="December">D</span></span></p>
+            <dl class="typed">
+              <div><dt>When</dt><dd>Sow Apr–Jun, after the last frost.</dd></div>
+              <div><dt>Harvest</dt><dd>July to October.</dd></div>
+              <div><dt>Saving</dt><dd>Pick up the fallen green seeds and dry them on a windowsill until they wrinkle.</dd></div>
+            </dl>
+            <div class="loan">
+              <p class="stock"><span class="have">2</span> of 12 packets in the drawer · 9 came back last year</p>
+              <button class="btn borrow" type="button">Borrow this packet</button>
+            </div>
+          </div>
+          <div class="stamp" aria-hidden="true"></div>
+        </article>
+      </li>
+      <li class="card" id="no-041" data-no="041" data-sow="2,3" data-have="4" data-of="6">
+        <article aria-labelledby="t-041">
+          <header class="card-head"><span class="call">No.&thinsp;041</span><span class="drawer">Expert to save</span></header>
+          <figure class="plate"><img src="plates/cardon_de_tours.webp" width="1280" height="1849" alt="Engraving of spiny cardoon of tours, from Vilmorin-Andrieux, 1904" loading="lazy"></figure>
+          <div class="card-body">
+            <h3 id="t-041"><span class="fr">Cardon de Tours</span><span class="en">Spiny cardoon of Tours · <i>Cynara cardunculus</i></span></h3>
+            <p class="months" aria-label="Sow in: March, April"><span class="months-k">Sow</span><span class="months-v" aria-hidden="true"><span class="" title="January">J</span><span class="" title="February">F</span><span class="on" title="March">M</span><span class="on" title="April">A</span><span class="" title="May">M</span><span class="" title="June">J</span><span class="" title="July">J</span><span class="" title="August">A</span><span class="" title="September">S</span><span class="" title="October">O</span><span class="" title="November">N</span><span class="" title="December">D</span></span></p>
+            <dl class="typed">
+              <div><dt>When</dt><dd>Sow under cover Mar–Apr.</dd></div>
+              <div><dt>Harvest</dt><dd>October, after blanching.</dd></div>
+              <div><dt>Saving</dt><dd>Crosses with artichokes. Bag the flower heads, and expect to wait two years.</dd></div>
+            </dl>
+            <div class="loan">
+              <p class="stock"><span class="have">4</span> of 6 packets in the drawer · 2 came back last year</p>
+              <button class="btn borrow" type="button">Borrow this packet</button>
+            </div>
+          </div>
+          <div class="stamp" aria-hidden="true"></div>
+        </article>
+      </li>
+      <li class="card" id="no-048" data-no="048" data-sow="8,9,10" data-have="0" data-of="8">
+        <article aria-labelledby="t-048">
+          <header class="card-head"><span class="call">No.&thinsp;048</span><span class="drawer">Moderate to save</span></header>
+          <figure class="plate"><img src="plates/cerfeuil_tubereux.webp" width="1280" height="1048" alt="Engraving of tuberous chervil, from Vilmorin-Andrieux, 1904" loading="lazy"></figure>
+          <div class="card-body">
+            <h3 id="t-048"><span class="fr">Cerfeuil tubéreux</span><span class="en">Tuberous chervil · <i>Chaerophyllum bulbosum</i></span></h3>
+            <p class="months" aria-label="Sow in: September, October, November"><span class="months-k">Sow</span><span class="months-v" aria-hidden="true"><span class="" title="January">J</span><span class="" title="February">F</span><span class="" title="March">M</span><span class="" title="April">A</span><span class="" title="May">M</span><span class="" title="June">J</span><span class="" title="July">J</span><span class="" title="August">A</span><span class="on" title="September">S</span><span class="on" title="October">O</span><span class="on" title="November">N</span><span class="" title="December">D</span></span></p>
+            <dl class="typed">
+              <div><dt>When</dt><dd>Sow Sep–Nov. The seed needs a winter to wake.</dd></div>
+              <div><dt>Harvest</dt><dd>The next July.</dd></div>
+              <div><dt>Saving</dt><dd>Seed loses life in months. Return it fresh, the same autumn, in a sealed envelope.</dd></div>
+            </dl>
+            <div class="loan">
+              <p class="stock"><span class="have">0</span> of 8 packets in the drawer · 5 came back last year</p>
+              <button class="btn borrow" type="button" disabled>All out · back in autumn</button>
+            </div>
+          </div>
+          <div class="stamp" aria-hidden="true"></div>
+        </article>
+      </li>
+      <li class="card" id="no-052" data-no="052" data-sow="3,4" data-have="5" data-of="8">
+        <article aria-labelledby="t-052">
+          <header class="card-head"><span class="call">No.&thinsp;052</span><span class="drawer">Expert to save</span></header>
+          <figure class="plate"><img src="plates/chou_de_vaugirard.webp" width="1280" height="875" alt="Engraving of vaugirard winter cabbage, from Vilmorin-Andrieux, 1904" loading="lazy"></figure>
+          <div class="card-body">
+            <h3 id="t-052"><span class="fr">Chou de Vaugirard</span><span class="en">Vaugirard winter cabbage · <i>Brassica oleracea</i></span></h3>
+            <p class="months" aria-label="Sow in: April, May"><span class="months-k">Sow</span><span class="months-v" aria-hidden="true"><span class="" title="January">J</span><span class="" title="February">F</span><span class="" title="March">M</span><span class="on" title="April">A</span><span class="on" title="May">M</span><span class="" title="June">J</span><span class="" title="July">J</span><span class="" title="August">A</span><span class="" title="September">S</span><span class="" title="October">O</span><span class="" title="November">N</span><span class="" title="December">D</span></span></p>
+            <dl class="typed">
+              <div><dt>When</dt><dd>Sow Apr–May in a seedbed.</dd></div>
+              <div><dt>Harvest</dt><dd>November to February.</dd></div>
+              <div><dt>Saving</dt><dd>Flowers in its second spring and crosses with every brassica in the street. Ask us first.</dd></div>
+            </dl>
+            <div class="loan">
+              <p class="stock"><span class="have">5</span> of 8 packets in the drawer · 1 came back last year</p>
+              <button class="btn borrow" type="button">Borrow this packet</button>
+            </div>
+          </div>
+          <div class="stamp" aria-hidden="true"></div>
+        </article>
+      </li>
+      <li class="card" id="no-063" data-no="063" data-sow="2,3,4,5,6,7" data-have="11" data-of="12">
+        <article aria-labelledby="t-063">
+          <header class="card-head"><span class="call">No.&thinsp;063</span><span class="drawer">Easy to save</span></header>
+          <figure class="plate"><img src="plates/laitue_georges.webp" width="1280" height="952" alt="Engraving of lettuce ‘georges’, from Vilmorin-Andrieux, 1904" loading="lazy"></figure>
+          <div class="card-body">
+            <h3 id="t-063"><span class="fr">Laitue Georges</span><span class="en">Lettuce ‘Georges’ · <i>Lactuca sativa</i></span></h3>
+            <p class="months" aria-label="Sow in: March, April, May, June, July, August"><span class="months-k">Sow</span><span class="months-v" aria-hidden="true"><span class="" title="January">J</span><span class="" title="February">F</span><span class="on" title="March">M</span><span class="on" title="April">A</span><span class="on" title="May">M</span><span class="on" title="June">J</span><span class="on" title="July">J</span><span class="on" title="August">A</span><span class="" title="September">S</span><span class="" title="October">O</span><span class="" title="November">N</span><span class="" title="December">D</span></span></p>
+            <dl class="typed">
+              <div><dt>When</dt><dd>Sow little and often, Mar–Aug.</dd></div>
+              <div><dt>Harvest</dt><dd>Six weeks after sowing.</dd></div>
+              <div><dt>Saving</dt><dd>Let one plant bolt. Collect the feathery heads when they look like dandelion clocks.</dd></div>
+            </dl>
+            <div class="loan">
+              <p class="stock"><span class="have">11</span> of 12 packets in the drawer · 17 came back last year</p>
+              <button class="btn borrow" type="button">Borrow this packet</button>
+            </div>
+          </div>
+          <div class="stamp" aria-hidden="true"></div>
+        </article>
+      </li>
+    </ol>
+  </section>
+
+  <section class="borrowing" id="borrow" aria-labelledby="h-borrow">
+    <div class="borrower-card">
+      <h2 id="h-borrow">Borrower’s card</h2>
+      <ol class="ruled">
+        <li><b>Take up to three packets a season</b> with your Wren Street library card. Each packet holds enough for a two-metre row or six pots.</li>
+        <li><b>Grow them however you like.</b> A balcony counts. Write on the packet where you grew it and how it did.</li>
+        <li><b>Let your best plant go to seed,</b> and bring back one packet of it by the date we stamp on your card. Envelopes and labels are at the desk.</li>
+        <li><b>It didn’t work?</b> Bring the packet back empty and tell us why. Slugs, drought and forgetting are all useful to know.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="h-visit">
+    <h2 id="h-visit">Find the drawer</h2>
+    <div class="visit-grid">
+      <p class="address">Wren Street Library<br>14 Wren Street<br>Ground floor, beside the returns desk</p>
+      <table class="hours">
+        <caption class="sr-only">Opening hours</caption>
+        <tbody>
+          <tr><th scope="row">Tuesday</th><td>10:00–19:00</td></tr>
+          <tr><th scope="row">Wednesday</th><td>10:00–17:00</td></tr>
+          <tr><th scope="row">Thursday</th><td>10:00–19:00</td></tr>
+          <tr><th scope="row">Friday</th><td>10:00–17:00</td></tr>
+          <tr><th scope="row">Saturday</th><td>09:30–16:00 · seed swap first Saturday, 10–12</td></tr>
+          <tr><th scope="row">Sun, Mon</th><td>Closed</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="credits">
+  <p>The Wren Street Seed Library is fictional, built as a worked example of <a href="https://github.com/mowfxy/kern">Kern</a>. The plates are real and in the public domain:</p>
+  <ul>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Ail_blanc_Vilmorin-Andrieux_1904.png">Ail blanc</a>, Vilmorin-Andrieux, <i>Les plantes potagères</i>, 1904. Public domain.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Bourrache_officinale_Vilmorin-Andrieux_1904.png">Bourrache officinale</a>, Vilmorin-Andrieux, <i>Les plantes potagères</i>, 1904. Public domain.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Capucine_petite_Vilmorin-Andrieux_1904.png">Capucine petite</a>, Vilmorin-Andrieux, <i>Les plantes potagères</i>, 1904. Public domain.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Cardon_de_Tours_Vilmorin-Andrieux_1904.png">Cardon de Tours</a>, Vilmorin-Andrieux, <i>Les plantes potagères</i>, 1904. Public domain.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Cerfeuil_tub%C3%A9reux_Vilmorin-Andrieux_1904.png">Cerfeuil tubéreux</a>, Vilmorin-Andrieux, <i>Les plantes potagères</i>, 1904. Public domain.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Chou_de_Vaugirard_Vilmorin-Andrieux_1904.png">Chou de Vaugirard</a>, Vilmorin-Andrieux, <i>Les plantes potagères</i>, 1904. Public domain.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Laitue_Georges_Vilmorin-Andrieux_1904.png">Laitue Georges</a>, Vilmorin-Andrieux, <i>Les plantes potagères</i>, 1904. Public domain.</li>
+  </ul>
+</footer>
+<p class="sr-only" aria-live="polite" id="live"></p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="ink"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="2.2"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 1 1 1"/></feComponentTransfer></filter></svg>
+<script src="app.js" type="module"></script>
+</body>
+</html>

@@ -51,6 +51,10 @@ Exit with a non-zero status. Print errors to stderr and results to stdout. Show 
 - **Resizing:** reflow at the minimum supported size (often 80×24) and say clearly when the window is too small.
 - **Themes:** inherit the terminal background. Do not paint a full-screen background colour unless the app owns the whole screen and offers a theme setting.
 
+## Text-mode art and animation
+
+A terminal is a medium with its own art: box drawing, block elements, braille plots, sparklines, colour gradients across cells. Use it where it carries information (a sparkline of build times, a braille chart of latency, a progress bar that shows parallel workers) or where the product's identity lives in the terminal (an idle screen in a TUI, `--about`, a first-run greeting shown once). Keep animation at a terminal's own rhythm, redraw only changed cells, never animate when output is not a TTY or when `NO_COLOR` or a reduced-motion preference is set, and never make anyone wait for art. When a product's website shows its terminal, show the real output in a real character grid ([kern-motion](../kern-motion/SKILL.md#text-mode-and-ascii-animation)).
+
 ## Machine output
 
 Provide `--json` (or `--format json`) for anything a script might consume, with a stable schema. Make human output pleasant and machine output boring.

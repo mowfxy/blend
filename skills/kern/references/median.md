@@ -11,9 +11,11 @@ The median moves. When a remedy becomes popular, models adopt it wholesale and i
 - **Type:** Inter, Geist, SF or the system stack picked without considering alternatives. Two weights, 400 and 600. A serif headline with one italic word.
 - **Colour:** violet or indigo accents. Purple-to-blue gradients. Near-black with one neon accent for anything technical or "AI". Beige and serif for anything "calm". Grey text on grey surfaces. One accent used everywhere until it means nothing.
 - **Shape:** every element in a rounded rectangle with a soft shadow, all at the same radius, often 12 or 16. Glass panels with nothing behind them.
-- **Icons:** one generic line set, icons in tinted circles or squares, sparkles for anything AI, emoji standing in for icons.
+- **Icons:** one generic line set (Lucide, Heroicons, Feather, Tabler) at its default 2 px stroke, icons in tinted circles or squares, sparkles for anything AI, a rocket for launch, a shield for security, emoji standing in for icons.
+- **Controls:** the component kit's defaults shipped as the design: a 40 px rounded-md button with a right arrow, a ghost secondary, a 1 px grey input with a blue focus ring, the same switch and the same toast on every product.
 - **Words:** unlock, supercharge, elevate, seamless, effortless, powerful, all-in-one. "Not just X, it's Y." Three-word tricolons. "Get started" and "Learn more" on every button. Three of everything.
 - **Motion:** fade-up on every block, hover-lift on every card, spring bounce on interface elements, a pulsing dot to look live.
+- **Register:** everything at the same middle volume. A festival, a tax tool and a seed shop all get one hero, one accent and one fade, because nobody decided how loud each should be.
 
 ## Websites
 
@@ -21,6 +23,8 @@ The median moves. When a remedy becomes popular, models adopt it wholesale and i
 - A logo strip, three icon-topped feature cards, a bento grid, testimonials, pricing with the middle plan highlighted, FAQ accordion, gradient CTA band and four-column footer.
 - An animated background (particles, aurora blobs, glowing grid, glyph rain) behind a hero with nothing to show.
 - A floating 3D blob or torus standing in for a missing product.
+- The 2025–26 "technical" look: film grain on everything, mono labels in square brackets, ASCII or dithered decoration with no text-mode product behind it, a dot grid, a bento of tinted cards.
+- The opposite failure, now just as common: a page for something people can see or taste with no pictures at all, grey type on off-white, and nothing that moves.
 - Furniture text such as "Est. 2024", coordinates, local time, version numbers and "Scroll to explore".
 
 ## Web apps and SaaS
@@ -60,7 +64,7 @@ The median moves. When a remedy becomes popular, models adopt it wholesale and i
 
 ## Terminal
 
-- Rainbow output, emoji status markers, ASCII-art banners on every run, spinners for operations that take 50 ms, and boxes drawn around everything.
+- Rainbow output, emoji status markers, ASCII-art banners on every run, spinners for operations that take 50 ms, and boxes drawn around everything. ASCII art itself is not the tell; a banner that delays every run is. A launch screen, an `--about` page or a TUI's idle view can carry real text-mode art.
 - No `--json` and no quiet mode. Colour that ignores `NO_COLOR` or non-TTY output.
 
 ## Slides, email and documents
@@ -71,4 +75,4 @@ The median moves. When a remedy becomes popular, models adopt it wholesale and i
 
 ## Escaping the median
 
-You do not escape the median by picking its opposite. That just gives you the anti-median, which is equally predictable. You escape it by going back to the ground: the facts, the material, the tension and the thesis. Let them produce a choice, then check the choice against this file. If it matches the median, ask whether the thesis really led there or your reflexes did.
+You do not escape the median by picking its opposite. That just gives you the anti-median, which is equally predictable. You escape it by going back to the ground: the facts, the material, the tension and the thesis. Let them produce a choice, then check the choice against this file. And do not escape it by going quiet: a page with every median element removed and nothing rich put back is the [avoidance aesthetic](eye.md#two-failure-modes), and it is converging just as fast. If it matches the median, ask whether the thesis really led there or your reflexes did.

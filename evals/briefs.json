@@ -1,47 +1,125 @@
 {
-  "about": "Briefs for testing Kern. Each runs with and without the suite, several times, in fresh sessions. Score renders blind with kern-critique; measure sameness with `kern ledger compare` on the fingerprints. See evals/README.md.",
+  "about": "Briefs for testing Kern. Each runs with and without the suite, several times, in fresh sessions. Score renders blind with kern-critique; measure sameness with `kern ledger compare` on the fingerprints. See evals/README.md. Briefs ending in -web or -tool test the register: the same suite should produce very different volumes of picture, motion and depth for them.",
   "briefs": [
     {
       "id": "vineyard-desktop",
       "surface": "desktop",
       "brief": "A desktop app (Tauri) for a small cooperative winery to log grape deliveries at the weighbridge during harvest: grower, block, variety, weight, sugar reading. Used on a laptop in a cold shed, sometimes with gloves.",
-      "checks": ["title bar continuous with the app in light and dark", "large targets despite desktop", "tabular numerals", "offline state"]
+      "checks": [
+        "title bar continuous with the app in light and dark",
+        "large targets despite desktop",
+        "tabular numerals",
+        "offline state"
+      ]
     },
     {
       "id": "night-radio-web",
       "surface": "web",
       "brief": "A website for a late-night radio show that plays field recordings from around the city. Listeners should know when the next broadcast is and be able to play past episodes.",
-      "checks": ["first screen answers when", "one live element", "no stock ambient background", "full episode content"]
+      "checks": [
+        "first screen answers when",
+        "one live element",
+        "no stock ambient background",
+        "full episode content"
+      ]
     },
     {
       "id": "clinic-ios",
       "surface": "ios",
       "brief": "An iPhone app for a veterinary clinic's clients: book appointments, see their pet's vaccination schedule, and message the nurse. Owners are often anxious when using it.",
-      "checks": ["status bar continues content", "Dynamic Type at AX5", "native navigation and swipe back", "calm error states"]
+      "checks": [
+        "status bar continues content",
+        "Dynamic Type at AX5",
+        "native navigation and swipe back",
+        "calm error states"
+      ]
     },
     {
       "id": "fleet-dashboard",
       "surface": "dashboard",
       "brief": "An operations dashboard for a city bike-share: which docks are empty or full right now, rebalancing van routes, and broken bikes reported today. Watched on a wall screen and on laptops.",
-      "checks": ["dominant element answers the most urgent decision", "no default KPI row", "freshness shown", "colour-blind safe status"]
+      "checks": [
+        "dominant element answers the most urgent decision",
+        "no default KPI row",
+        "freshness shown",
+        "colour-blind safe status"
+      ]
     },
     {
       "id": "seed-library-android",
       "surface": "android",
       "brief": "An Android app for a community seed library: browse seeds by season, reserve packets, and log what you grew and returned.",
-      "checks": ["edge to edge", "predictive back", "200% font scale", "colour source from the domain, not the Material baseline"]
+      "checks": [
+        "edge to edge",
+        "predictive back",
+        "200% font scale",
+        "colour source from the domain, not the Material baseline"
+      ]
     },
     {
       "id": "deploy-cli",
       "surface": "terminal",
       "brief": "The output design for a CLI that deploys static sites to a small hosting company's servers: build, upload, invalidate cache, report URL.",
-      "checks": ["result line last", "NO_COLOR and piped output", "errors that teach", "--json"]
+      "checks": [
+        "result line last",
+        "NO_COLOR and piped output",
+        "errors that teach",
+        "--json"
+      ]
     },
     {
       "id": "board-deck",
       "surface": "media",
       "brief": "A 10-slide quarterly update for a bakery chain's board: sales by shop, a new sourdough line, staff turnover, and a request to open a fourth shop.",
-      "checks": ["titles read as the argument", "one dominant element per slide", "ends on the ask"]
+      "checks": [
+        "titles read as the argument",
+        "one dominant element per slide",
+        "ends on the ask"
+      ]
+    },
+    {
+      "id": "sneaker-reissue-web",
+      "surface": "web",
+      "brief": "A launch page for the re-issue of a 1987 trail-running shoe by a small outdoor brand. Release is in nine days; there is a glTF model of the shoe and six product photographs.",
+      "checks": [
+        "register is spectacular or expressive, not composed",
+        "the shoe can be turned in 3D with a still poster fallback",
+        "release time and sizes readable in one glance",
+        "no stock icons or kit buttons"
+      ]
+    },
+    {
+      "id": "payroll-settings-web",
+      "surface": "product",
+      "brief": "The settings area of a payroll product for small accounting firms: pay schedules, tax registrations, bank accounts, approvers.",
+      "checks": [
+        "register is silent",
+        "no spectacle, no decorative motion",
+        "every state designed",
+        "icons tuned or drawn, not library defaults"
+      ]
+    },
+    {
+      "id": "tracker-tool-web",
+      "surface": "web",
+      "brief": "A website for an open-source terminal music tracker. People should hear what it makes and install it in one command.",
+      "checks": [
+        "text-mode animation shows the real product, on a real character grid",
+        "sound only on request",
+        "reduced motion shows a composed still",
+        "install command copyable as text"
+      ]
+    },
+    {
+      "id": "bakery-web",
+      "surface": "web",
+      "brief": "A website for a neighbourhood bakery that sells out of its sourdough by 11 a.m. and takes orders for celebration cakes.",
+      "checks": [
+        "the bread is shown, large, more than once",
+        "today's bake and sell-out status are clear",
+        "no ASCII, 3D or effects without a source in the bakery",
+        "order flow works on a phone"
+      ]
     }
   ]
 }

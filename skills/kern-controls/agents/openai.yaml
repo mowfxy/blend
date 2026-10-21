@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kern Controls"
+  short_description: "Icons and controls drawn from the domain, not a kit"
+  default_prompt: "Use $kern-controls on this. Replace stock icons and kit buttons with controls derived from the domain's own instruments and marks, and design every state."

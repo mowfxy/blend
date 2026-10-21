@@ -8,10 +8,11 @@ It covers websites, web apps, dashboards, desktop apps (macOS, Windows, Linux; E
 
 ## Why outputs differ
 
-Most design prompts converge, because every model reaches for the same average answer. Kern works against that in four ways:
+Most design prompts converge, because every model reaches for the same average answer. Kern works against that in five ways:
 
 - **It derives instead of selecting.** Each design starts from the brief's own specific facts, finds the tension in them, and writes a one-sentence thesis that has to fail when you swap in a competitor's name.
 - **It names the median.** The agent writes down what an average model would ship for this exact brief, then treats it as presumed wrong.
+- **It decides how loud to be.** A tax tool and a festival site should not differ only in accent colour. Kern reads the [register](skills/kern/references/register.md) from the brief, silent to spectacular, and picks the rich materials the product is actually made of: photography, archival plates, ASCII and text-mode animation, live 3D, generative data art, sound, play. Each one has to pass a relevance test, and then the agent commits to it.
 - **It defends one risk.** Every design makes one decision a cautious designer would not, and it must come from the thesis.
 - **It keeps a ledger.** Each project's fingerprint is recorded in `~/.kern/ledger.jsonl`, and new work is checked against it for near-duplicates.
 
@@ -52,7 +53,7 @@ Kern does not interview you about taste. It decides, builds, and tells you the t
 
 | Skill | Owns |
 |---|---|
-| [kern](skills/kern/SKILL.md) | The method, [canon](skills/kern/references/canon.md), [eye](skills/kern/references/eye.md), [median](skills/kern/references/median.md), routing, tools |
+| [kern](skills/kern/SKILL.md) | The method, [canon](skills/kern/references/canon.md), [eye](skills/kern/references/eye.md), [median](skills/kern/references/median.md), [register](skills/kern/references/register.md), routing, tools |
 | [kern-web](skills/kern-web/SKILL.md) | Landing pages, marketing sites, portfolios, editorial and event pages |
 | [kern-product](skills/kern-product/SKILL.md) | Web apps, SaaS, forms, records, settings, every UI state |
 | [kern-dashboard](skills/kern-dashboard/SKILL.md) | Dashboards built around decisions, charts, data colour, tables |
@@ -64,17 +65,21 @@ Kern does not interview you about taste. It decides, builds, and tells you the t
 | [kern-media](skills/kern-media/SKILL.md) | Slides, email, documents and PDFs, social images, print |
 | [kern-type](skills/kern-type/SKILL.md) | Type derived from reading conditions; scales, numerals, scripts |
 | [kern-color](skills/kern-color/SKILL.md) | Palettes from a real source, OKLCH ramps, themes, contrast |
-| [kern-motion](skills/kern-motion/SKILL.md) | Motion from the product's physics, feedback, transitions, scroll |
-| [kern-imagery](skills/kern-imagery/SKILL.md) | Pictures, illustration, icons, 3D, ambient backgrounds, characters |
+| [kern-controls](skills/kern-controls/SKILL.md) | Icons, buttons, inputs and toggles drawn from the domain, not a kit |
+| [kern-motion](skills/kern-motion/SKILL.md) | Motion from the product's physics: feedback, transitions, scroll, ASCII and text-mode, kinetic type, shaders, 3D cameras |
+| [kern-imagery](skills/kern-imagery/SKILL.md) | Photography, open-collection sourcing, image treatments, illustration, live 3D, data art, characters |
 | [kern-critique](skills/kern-critique/SKILL.md) | The Kern Score, before-and-after ratings, the look-and-fix loop |
 | [kern-ship](skills/kern-ship/SKILL.md) | Working, honest, accessible, fast, found and secure |
 
 ## Examples
 
-There are two fictional products, built by running the method from scratch, each with its full record in `.kern/` ([details and scores](examples/README.md)):
+Three fictional products at three different registers, each built by running the method from scratch with its full record in `.kern/` ([details and scores](examples/README.md)):
 
-- **[Poolside](examples/poolside/):** an Electron desktop app for logging pool water tests. Its title bar is part of the app on macOS and Windows, and its pH reading is filled with the test kit's own colour.
-- **[Holm Ferry](examples/holm-ferry/):** a website for an island ferry. It is a drawn nautical chart and a live next-sailing board, with no hero photo or feature cards.
+- **[Rowtrack](examples/rowtrack/):** a terminal music tracker. The hero is a real pattern that scrolls row by row on a character grid, with a braille oscilloscope, block-element meters and a Web Audio synth you can play from your keyboard.
+- **[Skarvet 58](examples/skarvet/):** a mountain race. The hero is the massif in live 3D with contour lines, the course drawing itself from the hut, and a profile you scrub to fly the camera along it. Every number is measured from the terrain.
+- **[Wren Street Seed Library](examples/seed-library/):** a seed library in a branch library. Each variety is an index card carrying its 1904 Vilmorin engraving, and borrowing a packet stamps a due-back date in violet ink.
+
+[![Skarvet 58](examples/skarvet/preview.png)](examples/skarvet/)
 
 ## Tools
 
@@ -82,7 +87,7 @@ There are two fictional products, built by running the method from scratch, each
 node skills/kern/scripts/kern.mjs palette "#7a2e1f"              # OKLCH ramp from a source colour
 node skills/kern/scripts/kern.mjs contrast "#1c1d1f" "#f4f3f0"   # WCAG 2 + APCA
 node skills/kern/scripts/kern.mjs ledger check --fingerprint .kern/fingerprint.json
-node skills/kern/scripts/kern.mjs audit src/                     # median tells, chrome, placeholders
+node skills/kern/scripts/kern.mjs audit src/                     # median tells, stock icons, motion safety, chrome
 ```
 
 ## Repository
@@ -91,7 +96,7 @@ node skills/kern/scripts/kern.mjs audit src/                     # median tells,
 - `.claude-plugin/`: the Claude Code plugin and marketplace manifests.
 - `scripts/`: the installer, its tests and the validator.
 - `evals/`: briefs and a protocol for measuring quality and divergence.
-- `examples/`: two worked examples with their records.
+- `examples/`: three worked examples with their records.
 - `docs/audit.md`: why Kern was built, with before and after ratings.
 
 ```sh

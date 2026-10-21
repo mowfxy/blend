@@ -1,10 +1,31 @@
 {
   "name": "kern",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Kern by M4 Labs: a design practice for AI agents. Your own taste and a derivation method, not a menu of styles, for websites, web apps, dashboards, desktop apps, iOS, Android, watch, TV, terminals, slides, email and documents.",
-  "author": { "name": "M4 Labs", "url": "https://m4labs.xyz" },
+  "author": {
+    "name": "M4 Labs",
+    "url": "https://m4labs.xyz"
+  },
   "homepage": "https://github.com/mowfxy/kern",
   "repository": "https://github.com/mowfxy/kern",
   "license": "MIT",
-  "keywords": ["design", "ui", "ux", "taste", "frontend", "desktop", "ios", "android", "dashboard", "typography", "color", "motion"]
+  "keywords": [
+    "3d",
+    "android",
+    "animation",
+    "ascii",
+    "color",
+    "dashboard",
+    "design",
+    "desktop",
+    "frontend",
+    "icons",
+    "imagery",
+    "ios",
+    "motion",
+    "taste",
+    "typography",
+    "ui",
+    "ux"
+  ]
 }

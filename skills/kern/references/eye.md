@@ -67,4 +67,14 @@ Carry the principle, adapt the behaviour, and borrow the appearance only when as
 ## Two failure modes
 
 - **The median.** Every choice is the most common one. The result is competent and forgettable, and it is identical across products and across models. See [median](median.md).
-- **The avoidance aesthetic.** All the median choices have been removed and nothing put in their place. The result is a page or app with good manners and no idea: thin type, grey on white, empty space, no pictures. Removing defaults is half the job. The other half is substance: the real content, real pictures, decisive scale, and the one idea.
+- **The avoidance aesthetic.** All the median choices have been removed and nothing put in their place. The result is a page or app with good manners and no idea: thin type, grey on white, empty space, no pictures, nothing that moves. Removing defaults is half the job. The other half is substance: the real content, real pictures, decisive scale, motion where something moves, depth where the subject has depth, and the one idea. Taste is knowing when to be quiet *and* when to be loud. See [the register](register.md).
+
+## Seeing richness
+
+When a design calls for richness, look at it the way you look at finish:
+
+- **Is the picture big enough?** Pictures of the subject usually want to be much larger than a first instinct places them, and cropped braver.
+- **Is the rich element convincing?** A 3D scene with flat light, a dither on the wrong pictures, ASCII on a broken grid or motion at the wrong speed is worse than none. Fix it or remove it.
+- **Is it in one place, or smeared everywhere?** One scene at full strength reads as intent. Ten effects at half strength read as a template.
+- **Does the rest of the page hold up its end?** The quiet parts around a loud element still need decisive type, real content and designed controls.
+- **Does it survive the hundredth visit?** Motion that delights once and blocks forever after needs to get shorter, skippable or remembered.

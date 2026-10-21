@@ -152,7 +152,7 @@ function cmdPalette() {
 
 const KERN_HOME = process.env.KERN_HOME || join(homedir(), '.kern');
 const LEDGER = join(KERN_HOME, 'ledger.jsonl');
-const FIELDS = { platform: 1, structure: 2, type: 2, colorSource: 1.5, colorStance: 1.5, theme: 0.5, density: 1, shape: 1, motion: 1, imagery: 1.5, risk: 1 };
+const FIELDS = { platform: 1, structure: 2, register: 1, materials: 1.5, type: 2, colorSource: 1.5, colorStance: 1.5, theme: 0.5, density: 1, shape: 1, controls: 1, motion: 1, imagery: 1.5, risk: 1 };
 const STOP = new Set(['a', 'an', 'the', 'and', 'or', 'with', 'of', 'in', 'on', 'for', 'to', 'one', 'no', 'none', 'plus']);
 const words = (v) => new Set(String(Array.isArray(v) ? v.join(' ') : v ?? '').toLowerCase().split(/[^a-z0-9]+/).filter((w) => w && !STOP.has(w)));
 function fieldSim(a, b) {
@@ -253,6 +253,9 @@ function cmdAudit() {
   const all = [...sources.values()].join('\n');
   const hasDrag = /(-webkit-)?app-region\s*:\s*drag/.test(all);
   const hasTauriDrag = /data-tauri-drag-region/.test(all);
+  const hasReducedMotion = /prefers-reduced-motion|useReducedMotion|reducedMotion|accessibilityReduceMotion|ANIMATOR_DURATION_SCALE/.test(all);
+  const isNative = files.some((f) => /\.(swift|kt|kts|xaml|dart)$/.test(f));
+  let revealCount = 0; let revealFile = null; let motionAt = null;
 
   for (const [file, text] of sources) {
     const ext = extname(file).toLowerCase();
@@ -273,6 +276,15 @@ function cmdAudit() {
         }
         if (/\b(from|via|to)-(violet|indigo|purple)-\d{3}\b/.test(ln)) add('WARN', 'violet-gradient', file, n, 'A violet or indigo gradient is the most common generated palette. Derive colour from a source (kern-color).');
         if (/href=["']#["']/.test(ln)) add('WARN', 'dead-link', file, n, 'href="#" — give it a real destination or make it a button (kern-ship).');
+        // Stock parts: the fastest way for unrelated products to look identical (kern-controls).
+        const lib = ln.match(/from\s+["'](lucide-react|lucide-vue-next|lucide|@heroicons\/[\w-]+|react-icons\/\w+|react-feather|feather-icons|@tabler\/icons-react|@phosphor-icons\/react|@radix-ui\/react-icons)["']|(unpkg\.com|cdn\.jsdelivr\.net\/npm)\/(lucide|feather-icons|@tabler\/icons|@phosphor-icons)/);
+        if (lib && !isNative) add('WARN', 'stock-icons', file, n, `${lib[1] || lib[3]} at its defaults. Draw the icons from the domain, or tune the set's stroke, size and corners to the system and record why (kern-controls).`);
+        if (/inline-flex items-center justify-center (gap-2 )?whitespace-nowrap rounded-md text-sm font-medium/.test(ln)) add('WARN', 'kit-button', file, n, 'The component kit\'s default button classes. Derive the button anatomy from the domain (kern-controls).');
+        if (/[✨\u{1F680}\u{1F525}⚡\u{1F4A1}✅\u{1F3AF}\u{1F4C8}]/u.test(ln) && /<(button|li|h[1-6]|span|div|a)\b|label|title/.test(ln)) add('WARN', 'emoji-icon', file, n, 'Emoji standing in for an icon (kern-controls).');
+        if (/\banimate-(pulse|bounce|ping)\b/.test(ln)) add('WARN', 'loop-for-life', file, n, 'A looping pulse or bounce to look alive. Loop only the product\'s real material or a real process (kern-motion).');
+        if (/\b(data-aos|whileInView|reveal|fade-?up|fadeInUp)\b/i.test(ln)) { revealCount++; revealFile ??= [file, n]; }
+        if (/@keyframes|requestAnimationFrame|\.animate\(|gsap\.|animation\s*:|motion\.\w+|withSpring|withTiming|animate\s*=\s*\{/.test(ln)) motionAt ??= [file, n];
+        if (/setPixelRatio\(\s*(window\.)?devicePixelRatio\s*\)/.test(ln)) add('WARN', '3d-pixel-ratio', file, n, 'Uncapped pixel ratio. Use Math.min(devicePixelRatio, 2) or lower so 3D stays smooth on dense phones (kern-imagery).');
       }
       if (/lorem ipsum/i.test(ln)) add('FAIL', 'placeholder', file, n, 'Lorem ipsum. Use the real content or a labelled sample.');
     });
@@ -322,6 +334,13 @@ function cmdAudit() {
     }
   }
 
+  if (revealCount >= 6) add('WARN', 'same-entrance', revealFile[0], revealFile[1], `${revealCount} elements share one reveal. Choreograph each section by its content, or let most of them simply be there (kern-motion).`);
+  if (motionAt && !hasReducedMotion) add('FAIL', 'reduced-motion', motionAt[0], motionAt[1], 'Animation with no reduced-motion handling anywhere. Give every moving thing a composed still (kern-motion).');
+  if (/new\s+(THREE\.)?WebGLRenderer\s*\(/.test(all) && !/(IntersectionObserver|visibilitychange|setAnimationLoop\(\s*null\s*\))/.test(all)) {
+    const [file, n] = [...sources].map(([f, t]) => [f, t.split(/\r?\n/).findIndex((l) => /WebGLRenderer\s*\(/.test(l)) + 1]).find(([, n]) => n > 0);
+    add('WARN', '3d-offscreen', file, n, 'WebGL renders without pausing offscreen or in hidden tabs (kern-imagery).');
+  }
+
   const fails = findings.filter((f) => f.level === 'FAIL').length;
   if (asJson) console.log(JSON.stringify({ files: files.length, fails, warns: findings.length - fails, findings }, null, 2));
   else {
@@ -345,7 +364,7 @@ if (!cmd || !commands[cmd]) {
   kern ledger check|add --fingerprint <file>              Compare against past projects; record this one
   kern ledger compare <a.json> <b.json>                   Field-by-field similarity of two fingerprints
   kern ledger list                                        Projects recorded on this machine (~/.kern)
-  kern audit [path ...] [--json]                          Median tells, chrome integration, placeholders`);
+  kern audit [path ...] [--json]                          Median tells, stock parts, motion safety, chrome, placeholders`);
   process.exit(cmd ? 2 : 0);
 }
 commands[cmd]();

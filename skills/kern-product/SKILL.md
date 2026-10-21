@@ -42,6 +42,10 @@ Utility does not require generic styling. The product's identity lives in:
 
 Chrome and repeated controls stay calm. Repeated-work screens get no ambient backgrounds, no glass over flat colour and no decorative motion.
 
+## Controls and icons
+
+Products are where component kits are most useful and most visible. Use the kit for behaviour and accessibility, and redesign its surface: button anatomy, input frames, focus rings, toggles and menus get the system's stroke, radius and accent ([kern-controls](../kern-controls/SKILL.md)). A large product may use a library icon set, chosen for its construction and tuned to the system's stroke and size, with the product-specific icons drawn to match. Record which set and why.
+
 ## Verify
 
 Run the primary path, a recovery path, a first-use empty state, long content and a narrow window. Then check keyboard-only use, plus repeated and interrupted input such as a double submit, going back mid-flow and a session timeout. Render light and dark if both ship. Score with [kern-critique](../kern-critique/SKILL.md), using its product weighting.

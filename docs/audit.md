@@ -55,3 +55,34 @@ The suites were scored as design systems for AI agents on ten criteria, 0–10, 
 - **The headless-browser inspector**, which measured headline line counts and real font loading at three widths. Kern's critique asks the agent to look at screenshots it takes with whatever browser tool it has. A rendered inspector is the clearest next tool to build.
 - **The open-collection picture search.** Kern describes the sources and the crediting rules, but has no script that searches them.
 - **The 247-site study's numbers.** Kern keeps only the principles that generalise beyond award-gallery websites.
+
+## Kern 1.1: the register, controls and richness
+
+An audit of Kern 1.0 on 21 October 2026 found that it had fixed convergence on *style* but not on *volume*. Its method removed the median and then mostly asked for restraint, so unrelated products still came out at the same polite middle loudness.
+
+**Findings**
+
+1. **Restraint was treated as taste.** Spectacle was framed as "most products get none or one"; looping motion and ASCII art appeared only as tells; nothing ever asked whether a product was too *quiet* for its subject. The eye named the avoidance aesthetic but no step prevented it.
+2. **No decision about loudness.** The method derived colour, type and space, but never decided how much picture, motion, depth or play a product should carry. A festival and a tax tool could differ only in accent colour.
+3. **Controls were two bullets.** Icons and buttons, where products most visibly converge (one line-icon set, one kit button with an arrow), had no craft, no derivation and no audit rule.
+4. **The rich toolbox was missing.** Motion covered feedback and entrances, but not text-mode and ASCII animation, kinetic type, scroll-driven CSS, shaders, generative data art or 3D camera work. Imagery had no image treatments and no recipe for actually sourcing open-collection pictures.
+5. **The examples were both quiet.** A desktop utility and a drawn chart: good work, but they modelled only the low end of the dial.
+
+**Changes**
+
+- **[The register](../skills/kern/references/register.md):** a new reference and a new method step (6). The agent reads loudness from the brief (experience or utility, frequency and state, how sensory the subject is, what the domain's best artefacts look like, what it can make convincing), names a register from silent to spectacular, goes through a richness inventory of thirteen materials, and runs every rich element through a three-question relevance test. Canon 16 makes it a principle: the register fits the subject, and a sensory subject shipped silent is a defect.
+- **[kern-controls](../skills/kern-controls/SKILL.md):** a new specialist for icons, buttons, inputs, toggles and cursors, derived from the domain's own instruments, marks and notation, with a procedure for drawing an icon family, rules for when a library set is right and how to tune it, and every state.
+- **[kern-motion](../skills/kern-motion/SKILL.md):** motion by register, a toolbox of fourteen techniques each with when it fits, a full craft section on text-mode and ASCII animation (real grids, character ramps, braille, frame rate as voice, accessibility), loops allowed only when the thing really runs, and "too little for the subject" as a generated-looking failure.
+- **[kern-imagery](../skills/kern-imagery/SKILL.md):** a Commons sourcing recipe with licence checks, eight image treatments tied to printing technologies, generative and data art, and a much deeper live-3D section (tool choice, light, material, camera, atmosphere, interaction, engineering).
+- **Critique and audit:** new passes for register and controls, caps for stock icon sets, register mismatch, irrelevant spectacle and animation without a reduced-motion still. `kern.mjs audit` now flags icon-library imports, kit button classes, emoji icons, decorative loops, one entrance repeated six or more times, animation with no reduced-motion handling (FAIL), uncapped WebGL pixel ratio and WebGL that never pauses. The ledger fingerprints register, materials and controls.
+- **Examples rebuilt** at three different registers: [Rowtrack](../examples/rowtrack/) (text-mode and sound), [Skarvet 58](../examples/skarvet/) (live 3D terrain) and the [Wren Street Seed Library](../examples/seed-library/) (archival plates and paper). Their fingerprints are 7–10% similar.
+
+| Criterion | Kern 1.0 | Kern 1.1 | Evidence |
+|---|---|---|---|
+| Output divergence | 7.5 | 8.5 | Register and materials now differ by brief, and the ledger compares them *(still not blind-measured)* |
+| Range (quiet to spectacular) | 5.0 | 8.5 | No loudness decision versus a register step, a richness inventory and a relevance test |
+| Controls and icons | 3.0 | 8.0 | Two bullets versus a specialist, a derivation procedure, audit rules and caps |
+| Motion craft | 6.5 | 8.5 | Feedback and entrances versus a toolbox with text-mode, shaders, scroll-driven and 3D camera craft |
+| Imagery and 3D craft | 6.5 | 8.5 | Source list versus a sourcing recipe, treatments, data art and convincing-3D guidance |
+| Verification tooling | 7.0 | 7.5 | Seven new audit rules, including the first FAIL for motion safety |
+| Examples | 7.5 | 8.5 | Two quiet examples versus three at different registers, all rich elements verified in a browser |

@@ -51,7 +51,26 @@ Write this brief's median in the record, as specifically as you can: *"An averag
 
 From now on, every median element is presumed wrong. Keep one only when the thesis independently arrives at it, and record the reason. For example: *"SF Pro and the system list style: this is a macOS utility and native text is the thesis."*
 
-## 6. Derive the system
+## 6. Register
+
+Decide how loud the product should be before deriving any token, because the register changes what the tokens are for. Follow [the register](register.md): answer the five questions (experience or utility, frequency and state, how sensory the subject is, what the domain's best artefacts look like, what you can make convincing), name the register, and go through the richness inventory.
+
+Write it like this:
+
+```markdown
+## Register
+Expressive. People come for the race itself; the domain's best artefacts are race posters and topo maps; the subject is terrain.
+Materials:
+- Live 3D: the course terrain with the route on it. Turning it shows the climbs. Relevance: own material, shows elevation a map cannot, procedural terrain is convincing.
+- Type as image: bib numbers at poster scale.
+- Motion: the camera follows the profile scrubber; checkpoints rise in sequence.
+- Photography: none. No real photographs of a fictional course exist; the terrain replaces them.
+- ASCII, sound, character: no. Not the product's material.
+```
+
+Each material gets its relevance answer. A material you leave out gets its reason. Then spend the register in every section, not only the first screen.
+
+## 7. Derive the system
 
 Derive each token from the thesis and the ground. Write the source and the reason beside it. The craft specialists hold the detail for each.
 
@@ -67,11 +86,13 @@ Derive each token from the thesis and the ground. Write the source and the reaso
 
 **Motion** ([kern-motion](../../kern-motion/SKILL.md)). Derive the physics from the product. A precision tool moves fast and exactly. A calm reading app moves slowly with long settles. A playful consumer app can overshoot, on content but not on chrome. Write the duration and easing tokens and the one signature motion, if there is one.
 
+**Icons and controls** ([kern-controls](../../kern-controls/SKILL.md)). Find the domain's own instruments, marks and notation, and derive the button anatomy, the icon grammar and the input styles from them: a trail blaze, a tape transport key, a rubber stamp, a seed-drawer label. On native platforms, start from the system set and tune it. Never ship a component kit's defaults on a page whose register is composed or louder.
+
 **Chrome.** Decide how the platform frame meets the content: the title bar treatment and toolbar style on desktop, system bar behaviour and navigation bar appearance on mobile, the browser `theme-color` and scrollbar colour on the web. Never leave chrome as a default ([canon 6](canon.md)).
 
 **The defended risk.** Name the one decision a cautious designer would not have made. It must follow from the thesis. Examples: *"The route marker red is used as a full-bleed surface for the active job, not as a small badge."* *"Numerals are set in a condensed face at 2× body size in every table."*
 
-Record the **fingerprint**: platform, structure, type families, colour source and stance, density, shape, motion signature, imagery medium and the risk. Then run:
+Record the **fingerprint**: platform, structure, register, rich materials, type families, colour source and stance, density, shape, controls, motion signature, imagery medium and the risk. Then run:
 
 ```bash
 node <kern>/scripts/kern.mjs ledger check --fingerprint .kern/fingerprint.json
@@ -80,7 +101,7 @@ node <kern>/scripts/kern.mjs ledger add --fingerprint .kern/fingerprint.json
 
 `<kern>` is this skill's folder. `check` compares the fingerprint against every project on this machine and flags near-duplicates. When an unrelated product scores too close, change at least three axes and record why. Related work for the same brand is supposed to match.
 
-## 7. Compose
+## 8. Compose
 
 - **Hardest screen first.** Start with the densest table, the longest form, the most stateful view or the screen with the most real content. Easy screens follow from a resolved hard one, but the reverse never holds.
 - **One dominant element per view**, decided before components.
@@ -89,15 +110,16 @@ node <kern>/scripts/kern.mjs ledger add --fingerprint .kern/fingerprint.json
 - **Each size as its own composition:** phone, tablet, narrow window, wide window, as the platform requires.
 - **Chrome integrated from the first build**, not added at the end.
 
-## 8. Critique and kern
+## 9. Critique and kern
 
 Render and look ([kern-critique](../../kern-critique/SKILL.md)): score, fix the three largest problems, and look again, up to three rounds. Then do the kerning pass from [the eye](eye.md#seeing-finish). Run `kern.mjs audit` on the source for measurable tells and chrome integration, and fix or defend each finding.
 
-## Two runs of the same method
+## Three runs of the same method
 
-The method does not produce a look. These two products went through the same eight steps.
+The method does not produce a look. These three products went through the same nine steps.
 
-- **A desktop app for a small vineyard to log harvest weights.** Ground: refractometer readings, crate tags with grower numbers, a weighbridge ticket printer, cold wet mornings, gloves. Tension: fast entry with cold hands, but records that must stand up in a cooperative dispute. Thesis: *the weighbridge ticket*. Result: large tabular numerals, a narrow receipt-like record column, high-contrast ink on an off-white that matches the ticket stock, oversized hit areas despite being a desktop app, the toolbar merged into the ticket header, and no colour except the stamp-red "disputed" state.
-- **A website for a night-time radio show that plays field recordings.** Ground: microphones in the rain, the hour the show airs, listeners on night shifts, recordings named by place and time. Tension: atmospheric, but the next broadcast time must be readable in a second. Thesis: *a station clock in a dark studio*. Result: a dark blue-black field, one enormous countdown as the dominant element, recordings listed as place and time pairs in a mono-width index, a single live element (what is on air right now), and no imagery beyond a waveform of the current recording.
+- **A desktop app for a small vineyard to log harvest weights.** Register: silent. Ground: refractometer readings, crate tags with grower numbers, a weighbridge ticket printer, cold wet mornings, gloves. Tension: fast entry with cold hands, but records that must stand up in a cooperative dispute. Thesis: *the weighbridge ticket*. Result: large tabular numerals, a narrow receipt-like record column, high-contrast ink on an off-white that matches the ticket stock, oversized hit areas despite being a desktop app, the toolbar merged into the ticket header, and no colour except the stamp-red "disputed" state.
+- **A website for a night-time radio show that plays field recordings.** Register: expressive, through sound and one live element rather than pictures. Ground: microphones in the rain, the hour the show airs, listeners on night shifts, recordings named by place and time. Tension: atmospheric, but the next broadcast time must be readable in a second. Thesis: *a station clock in a dark studio*. Result: a dark blue-black field, one enormous countdown as the dominant element, recordings listed as place and time pairs in a mono-width index, a single live element (what is on air right now), and no imagery beyond a waveform of the current recording, drawn live from the audio while it plays.
+- **A website for a sneaker re-issue drop.** Register: spectacular. Ground: a 1987 trail runner, its original catalogue page, suede and mesh swatches, the box's colour-blocked label, a timed release. Tension: hype, but a buyer has to read the sizes and the time in one glance. Thesis: *the shoe box opened on a shop counter*. Result: a real-time 3D model the visitor turns over to see the outsole pattern, material swatches photographed flat at 1:1 scale, the release countdown set like the box label, and nothing else animated.
 
-Do not reuse either outcome. They show reasoning, not templates.
+Do not reuse any of these outcomes. They show reasoning, not templates.

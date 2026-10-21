@@ -1,0 +1,18 @@
+{
+  "project": "skarvet-58",
+  "brand": "Skarvet 58 (fictional)",
+  "platform": "web public page",
+  "structure": "full-bleed relief model with bib-number overlay and a scrubbable profile; checkpoint table; kit list",
+  "register": "spectacular",
+  "materials": ["live 3D terrain", "data as picture", "type as image", "play"],
+  "type": ["Archivo (62 to 100 width)"],
+  "colorSource": "Norwegian topographic map and the trail association's painted red T",
+  "colorStance": "plaster paper field, hypsometric tints, brown contours, one waymark red",
+  "theme": "light+dark night map",
+  "density": "poster hero, tabular sections",
+  "shape": "square, painted-stone blazes",
+  "controls": "red signpost buttons with a pointed end; checkboxes as painted T blazes",
+  "motion": "route draws itself round the massif once; camera follows the profile scrubber",
+  "imagery": "generated terrain rendered with contour shader; mini elevation profiles",
+  "risk": "the course itself in 3D as the hero, every number measured from it"
+}

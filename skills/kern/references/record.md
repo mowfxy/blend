@@ -32,13 +32,18 @@ Swap test: (competitor tried, result)
 An average model would ship: …
 Kept from the median, and why:
 
+## Register
+Silent / composed / expressive / spectacular — why (experience or utility, frequency and state, how sensory, the domain's best artefacts, what you can make convincing)
+Materials: (each one used, with its relevance answer; each one left out, with its reason)
+
 ## System
 Colour source: … · stance: … · accent share: … · ramps: …
 Type: roles → families, sizes, why; candidates tried
 Space: base unit, scale, row/control heights, density
 Shape: radius, stroke, nesting
 Depth: elevation model
-Motion: durations, easing, signature move
+Controls: button anatomy, icon grammar or system set, inputs — and the domain object each comes from
+Motion: durations, easing, signature move, any text-mode or 3D motion
 Chrome: title bar / system bars / theme-color treatment
 Themes: light, dark, both — why
 Defended risk:
@@ -61,12 +66,15 @@ Save the fingerprint for the ledger next to it as `.kern/fingerprint.json`:
   "brand": "Coteaux cooperative",
   "platform": "desktop-macos-windows",
   "structure": "receipt column + entry pad",
+  "register": "silent",
+  "materials": ["type", "tabular numerals"],
   "type": ["IBM Plex Sans Condensed", "system"],
   "colorSource": "weighbridge ticket stock",
   "colorStance": "ink on paper, one stamp accent",
   "theme": "light+dark",
   "density": "comfortable-large-targets",
   "shape": "square, 1px rules",
+  "controls": "ticket-stub buttons, system icons at 1.5px",
   "motion": "instant, no signature",
   "imagery": "none, typographic",
   "risk": "desktop app with glove-sized targets"

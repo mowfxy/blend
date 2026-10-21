@@ -30,7 +30,7 @@ These are the principles Kern never drops. They hold on every platform and at ev
 
 **11. Every state is designed.** These include empty, loading, partial, error, offline, no permission, overflow, first run, hundreds of items, and success. The empty and error states use the same system as the populated state. Success appears only after the work has actually succeeded.
 
-**12. Feedback is immediate, motion explains.** Every input acknowledges itself within about 100 ms. Motion shows causality (where something came from, where it went, what changed) and then settles. Nothing loops just to look alive, and reduced motion keeps all the meaning.
+**12. Feedback is immediate, motion explains.** Every input acknowledges itself within about 100 ms. Motion shows causality (where something came from, where it went, what changed) and then settles. A loop is allowed only when the thing it shows really runs (a pattern playing, a live feed, a scene the visitor is watching), never just to look alive. Reduced motion keeps all the meaning.
 
 **13. Legible by default.** Body text and labels are big enough for the platform and posture, at full ink, with sufficient contrast (WCAG 2.2 AA at minimum: 4.5:1 for text, 3:1 for large text and UI boundaries). Measure is 45–75 characters for reading. Nothing a person needs to read is decorative microtext.
 
@@ -40,6 +40,8 @@ These are the principles Kern never drops. They hold on every platform and at ev
 
 **15. One idea, protected.** A design carries one memorable decision, the thesis made visible. Everything else gets quieter so that idea reads. Three medium ideas are weaker than one strong one, and spectacle is spent in one place or not at all.
 
-**16. Specific over safe.** Every choice should belong to this product. If a choice could be lifted onto an unrelated product unchanged, it is a default, and defaults are what the [median](median.md) is made of.
+**16. The register fits the subject.** Decide how loud the work should be from what it offers and how it is used ([register](register.md)), then commit to it. A sensory subject with no pictures and nothing moving is as wrong as spectacle on a tool used all day. Every rich element is the product's own material, carries something a still cannot, and is made convincing.
 
-**17. Finish is the premium.** Craft means deliberate crops, consistent strokes, tabular numerals where values compare, no accidental gaps, no orphaned words in headlines, real font files, matched icon weights and resolved hover, press and focus states. People feel finish before they can name it.
+**17. Specific over safe.** Every choice should belong to this product. If a choice could be lifted onto an unrelated product unchanged, it is a default, and defaults are what the [median](median.md) is made of. This includes the icons and buttons: a stock set at its defaults is a default ([kern-controls](../../kern-controls/SKILL.md)).
+
+**18. Finish is the premium.** Craft means deliberate crops, consistent strokes, tabular numerals where values compare, no accidental gaps, no orphaned words in headlines, real font files, matched icon weights and resolved hover, press and focus states. People feel finish before they can name it.

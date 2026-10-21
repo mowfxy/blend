@@ -50,7 +50,7 @@ for path in docs:
 
 # The shipped skills must not carry another suite's names or working folders.
 # docs/ (the audit) and the installer's legacy list are allowed to name what Kern replaced.
-residue = re.compile(r'\bblend(-[a-z-]+)?\b|taste[- ]skill|\.taste-skill|anti-slop', re.IGNORECASE)
+residue = re.compile(r'(?<![\w-])blend(?!-mode)(-[a-z-]+)?\b|taste[- ]skill|\.taste-skill|anti-slop', re.IGNORECASE)
 for path in (ROOT / 'skills').rglob('*'):
     if path.is_file() and path.suffix in {'.md', '.mjs', '.yaml', '.json', '.py'}:
         for number, line in enumerate(path.read_text(encoding='utf-8').splitlines(), 1):

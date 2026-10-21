@@ -1,0 +1,18 @@
+{
+  "project": "rowtrack",
+  "brand": "Rowtrack (fictional)",
+  "platform": "web public page",
+  "structure": "page as a tracker pattern: hex row-numbered sections, live pattern editor as the hero",
+  "register": "spectacular through text-mode and sound",
+  "materials": ["text-mode animation", "sound", "play", "type"],
+  "type": ["Martian Mono"],
+  "colorSource": "Impulse Tracker sandstone panels around a black pattern well",
+  "colorStance": "sand chrome, black well, tracker column colours for note instrument volume effect",
+  "theme": "light+dark",
+  "density": "character grid, 80 columns",
+  "shape": "square, bevelled panels lit from top left",
+  "controls": "bevelled tracker keys with their shortcut on a cap; QWERTY piano keys",
+  "motion": "pattern scrolls a row at a time under a fixed cursor, braille scope, block-element VU",
+  "imagery": "none; the pattern is the picture",
+  "risk": "the hero is a playable, editable pattern in a character grid, not a screenshot"
+}

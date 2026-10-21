@@ -1,31 +1,27 @@
 # Kern examples
 
-There are two fictional products, each built by running the [Kern method](../skills/kern/references/method.md) from the start. Each one keeps its working notes in `.kern/record.md` (ground, tension, thesis, the median it left, the system and the defended risk) and its fingerprint in `.kern/fingerprint.json`. Read the record first. It shows how the design was derived, which matters more than the result.
+Three fictional products, each built by running the [Kern method](../skills/kern/references/method.md) from the start. They were chosen to land at very different places on the [register](../skills/kern/references/register.md): one is made of text and sound, one of terrain, one of old engravings and paper. None of them uses an icon library, a component kit's buttons or a fade-up.
 
-They show reasoning, not templates. Kern does not reuse their layouts, palettes or typefaces for new work, and the ledger would flag a design that copied them.
+Each keeps its working notes in `.kern/record.md` (ground, tension, thesis, the median it left, the register and its materials, the system and the defended risk) and its fingerprint in `.kern/fingerprint.json`. Read the record first. It shows how the design was derived, which matters more than the result. They show reasoning, not templates.
 
-[![Poolside, a desktop app with its title bar merged into the sidebar](poolside/preview.png)](poolside/)
+| | Rowtrack | Skarvet 58 | Wren Street Seed Library |
+|---|---|---|---|
+| What | A terminal music tracker | A 58 km mountain race | A seed library in a branch library |
+| Register | Spectacular, through text-mode and sound | Spectacular, through live 3D | Expressive, through archival plates and paper |
+| Thesis | A tracker pattern scrolling in a terminal | The plaster relief model on the hut wall | The card drawer where every card is a plate |
+| Rich materials | ASCII pattern, braille scope, block VU meters, Web Audio synth, QWERTY piano | Three.js terrain with contour shader, route that draws itself, profile scrubber, mini profiles | 1904 Vilmorin engravings, an 1850s chromolithograph, index cards, a violet date stamp |
+| Left out on purpose | Photos, illustration, 3D | Photos, ASCII, sound | 3D, ASCII, sound, photos |
+| Type | Martian Mono | Archivo across its width axis | Bodoni Moda, Courier Prime |
+| Controls | Bevelled tracker keys with the shortcut on a cap | Red trail signposts; checkboxes as painted T blazes | Double-ruled typed labels; manila divider tabs |
+| Signature motion | Rows scroll under a fixed cursor | The route draws itself round the massif | The due-back stamp lands on the card |
 
-[![Poolside on Windows in dark mode, showing the closed spa](poolside/preview-windows-dark.png)](poolside/)
+The three fingerprints are 7–10% similar to each other (`kern ledger compare`), and all three pass `kern audit` with 0 FAIL and 0 WARN.
 
-Poolside running natively in Electron on Windows 11, in light and dark. The caption buttons are the real system controls, drawn in the toolbar's own colour:
+[![Rowtrack: a live tracker pattern beside the headline](rowtrack/preview.png)](rowtrack/)
 
-[![Poolside in Electron on Windows, light](poolside/native-windows-light.png)](poolside/)
+[![Skarvet 58: the course drawing itself over a 3D relief model](skarvet/preview.png)](skarvet/)
 
-[![Poolside in Electron on Windows, dark](poolside/native-windows-dark.png)](poolside/)
-
-[![Holm Ferry, a next-sailing board beside a drawn nautical chart](holm-ferry/preview.png)](holm-ferry/)
-
-| | Poolside | Holm Ferry |
-|---|---|---|
-| Surface | Desktop app (Electron, macOS and Windows) | Public website |
-| Thesis | The depth markings on the pool deck | The chart and timetable board at the head of the pier |
-| Colour source | Pool-test comparator reagents, tiled lane line | The Admiralty nautical chart |
-| Type | System UI plus Barlow Condensed numerals | Spectral (sea names always italic) plus IBM Plex Sans Condensed |
-| Defended risk | The pH tile is filled with the comparator colour for that exact reading | The hero is a drawn chart, not a photograph |
-| Live element | Due-test countdown, entry panel with wet-hand targets | Next sailing from either pier, computed from the timetable |
-
-The two fingerprints are 4% similar (`kern ledger compare`), and both pass `kern audit` with 0 FAIL and 0 WARN.
+[![Wren Street Seed Library: a colour plate beside the headline](seed-library/preview.png)](seed-library/)
 
 ## Run them
 
@@ -35,52 +31,24 @@ python -m http.server 18790 --bind 127.0.0.1
 
 Then open:
 
-- **Holm Ferry:** <http://127.0.0.1:18790/examples/holm-ferry/>
-- **Poolside in a browser:** <http://127.0.0.1:18790/examples/poolside/>. Add `?os=mac` or `?os=win` to switch the drawn window frame, and `#learner` or `#spa` to open the overdue and closed states.
-- **Poolside as a real desktop app:** `cd examples/poolside && npm install && npm start`. Set `POOLSIDE_THEME=light` or `POOLSIDE_THEME=dark` to force a theme without changing system settings.
+- **Rowtrack:** <http://127.0.0.1:18790/examples/rowtrack/>. Press Space or "Play with sound", click cells in the KICK·SNR column, and play the keyboard in section 30.
+- **Skarvet 58:** <http://127.0.0.1:18790/examples/skarvet/>. Drag to turn the massif (two fingers on touch), scrub the profile, and press "Show" on any checkpoint. It loads Three.js 0.160 from jsDelivr.
+- **Wren Street Seed Library:** <http://127.0.0.1:18790/examples/seed-library/>. Change the month, borrow a packet and watch the stamp, and scroll through the drawer on a tall screen.
 
-In a browser, Poolside draws a stand-in window frame so you can see the chrome treatment: on macOS the traffic lights sit in the sidebar, and on Windows the caption buttons sit in the app's own toolbar row. In Electron the frame is native. `main.js` uses `titleBarStyle: 'hidden'`, inset traffic lights on macOS, a `titleBarOverlay` matched to the toolbar on Windows that updates with the system theme, a drag region on the toolbar, a launch background colour so there is no white flash, and a full native menu.
+## How the register was read
+
+- **Rowtrack** is a tool, but people decide to install a tracker by hearing one. Its subject is literally rows of characters, so text-mode animation passes the [relevance test](../skills/kern/references/register.md#the-relevance-test) and nothing else needed to.
+- **Skarvet 58** sells an experience made of terrain. Depth carries the information runners plan by (where the climbs are), so live 3D earns the hero. Photographs were left out because none can honestly exist for a fictional massif.
+- **The seed library** is a quiet civic service with a beautiful history. Its richness is in the plates of the exact varieties it lends and in the paper rituals of a library, so it stays still except for one stamp and the drawer itself.
 
 ## Kern critique
 
-Both were scored with the [Kern Score](../skills/kern-critique/SKILL.md#the-kern-score) on screenshots in light and dark themes at desktop size, and Holm Ferry also at phone width. Each went through one look-and-fix round.
+Each was scored with the [Kern Score](../skills/kern-critique/SKILL.md#the-kern-score) at web weights, in every theme it ships, at 1440 and 390 wide, after one look-and-fix round. The records list the defects fixed and the ones still holding each score down.
 
-### Poolside: 8.1 (desktop weights)
+| | Thesis | Hierarchy | Composition | Type | Colour | Platform | Content | States | Craft | Distinct | Score |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Rowtrack | 9 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 7.5 | 9 | 8.2 |
+| Skarvet 58 | 9 | 9 | 8 | 8 | 8.5 | 8 | 8 | 8 | 7.5 | 9 | 8.4 |
+| Seed library | 9 | 8 | 8 | 8.5 | 8 | 8 | 8 | 8 | 7.5 | 8.5 | 8.2 |
 
-| Thesis | Hierarchy | Composition | Type | Colour | Platform | Content | States | Craft | Distinct |
-|---|---|---|---|---|---|---|---|---|---|
-| 8 | 8 | 7.5 | 8 | 8.5 | 8 | 8 | 8.5 | 7.5 | 8.5 |
-
-Fixed in round one:
-
-- The `.who` class leaked from the entry form into the log table, misaligning the "By" column.
-- The water tile's unit clipped at narrow tile widths. Values now size with container query units.
-- Safe ranges are now formatted consistently ("1.0–2.0").
-- Out-of-range warnings now name the most critical reading first (pH).
-- A native menu bar was added.
-
-Still short of 8.5:
-
-- The sidebar is plain. A per-pool depth or volume strip would carry the thesis further.
-- The log has no filter or export, which a real inspector would ask for.
-- The native title bar was checked in Electron 33 on Windows 11 in light and dark. That check moved the overlay up 1 px so the toolbar rule runs under the caption buttons. macOS was checked only in code and in the drawn browser frame.
-
-### Holm Ferry: 8.1 (web weights)
-
-| Thesis | Hierarchy | Composition | Type | Colour | Platform | Content | States | Craft | Distinct |
-|---|---|---|---|---|---|---|---|---|---|
-| 8.5 | 8.5 | 8 | 8 | 8.5 | 8 | 8 | 7 | 7.5 | 8.5 |
-
-Fixed in round one:
-
-- Land and shallows spilled past the chart's neatline, so they are now clipped to it.
-- "SKERRA" clipped at the chart's edge.
-- The route ran through the Lamb's labels and the next-sailing note.
-- A depth sounding collided with "Marran Sound".
-- The arrival time broke onto its own line.
-
-Still short of 8.5:
-
-- There are no photographs. The islands are fictional, so honest pictures of them cannot exist. For a real ferry, four or more photographs of the boat and the piers would raise it.
-- The "running today" line is a static sample, not a real status feed.
-- There is no state for a cancelled-today notice.
+These are self-scored by the agent that built them. Re-score them blind before trusting the numbers.

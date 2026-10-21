@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rowtrack — write music in rows, in your terminal</title>
+<meta name="description" content="Rowtrack is a pattern tracker for the terminal: five-channel synth and sampler, QWERTY piano, exports to WAV, MIDI and .it. A fictional product built as a Kern example.">
+<meta name="theme-color" content="#c3b48b" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2b2820" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#row-10">Skip to how a row works</a>
+
+<header class="bar panel">
+  <span class="logo" aria-label="Rowtrack">ROWTRACK</span>
+  <span class="ver">v0.9.2 · GPL-3.0</span>
+  <nav aria-label="Sections">
+    <a href="#row-10">10 Row</a>
+    <a href="#row-20">20 Effects</a>
+    <a href="#row-30">30 Keys</a>
+    <a href="#row-40">40 Install</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="row-00" aria-labelledby="h-00">
+    <div class="pitch">
+      <p class="rowno" aria-hidden="true">00</p>
+      <h1 id="h-00">Write music in rows. In&nbsp;your terminal.</h1>
+      <p class="lede">Rowtrack is a pattern tracker: you type notes into columns, and they play from top to bottom. Five channels, a built-in synth and sampler, and the same keys trackers have used since 1987.</p>
+      <div class="actions">
+        <button class="key key-primary" id="play" type="button" aria-pressed="false"><span class="cap">SPACE</span><span class="lbl">Play with sound</span></button>
+        <button class="key" id="stop" type="button"><span class="cap">ESC</span><span class="lbl">Stop</span></button>
+      </div>
+      <div class="install" id="install-hero">
+        <code>cargo install rowtrack</code>
+        <button class="key key-small copy" type="button" data-copy="cargo install rowtrack"><span class="lbl">Copy</span></button>
+      </div>
+      <p class="hint">Click any cell in the <b>KICK·SNR</b> column to add or remove a hit. The pattern is <span id="desc-pattern">“Low Tide”, 64 rows at 125 BPM, speed 6</span>.</p>
+    </div>
+
+    <figure class="screen" aria-labelledby="screen-cap">
+      <div class="term panel-inset">
+        <div class="term-head" aria-hidden="true"><span>PATTERN 00/01</span><span id="pos">ROW 00</span><span>125 BPM · SPD 6</span></div>
+        <pre class="scope" id="scope" aria-hidden="true"></pre>
+        <pre class="vu" id="vu" aria-hidden="true"></pre>
+        <div class="well" id="well" role="grid" aria-label="Pattern editor, kick and snare column editable">
+          <pre class="pattern" id="pattern"></pre>
+          <div class="cursor-row" aria-hidden="true"></div>
+        </div>
+        <div class="term-foot" aria-hidden="true"><span id="state">PREVIEW · MUTED</span><span>F1 HELP</span><span>F5 PLAY  F8 STOP</span></div>
+      </div>
+      <figcaption id="screen-cap">The real pattern editor, running in the page. Rows scroll under a fixed cursor bar, the way they do in the terminal. Sound starts only when you press Play.</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec" id="row-10" aria-labelledby="h-10">
+    <p class="rowno" aria-hidden="true">10</p>
+    <h2 id="h-10">One row, four columns per channel.</h2>
+    <div class="anatomy panel-inset">
+<pre class="big" aria-hidden="true"><span class="c-note">C-4</span> <span class="c-ins">05</span> <span class="c-vol">30</span> <span class="c-fx">A04</span></pre>
+<pre class="legend" aria-hidden="true">└─┬─┘   └┬─┘  └┬─┘  └─┬──┘
+  │      │     │      └─ effect: slide volume down by 4 each tick
+  │      │     └──────── volume: 30 of 40 (hex), about three quarters
+  │      └────────────── instrument 05: the lead pulse
+  └───────────────────── note: C in octave 4</pre>
+      <p class="sr-only">A row cell reads C-4, 05, 30, A04: note C in octave 4, instrument 5, volume 30 hex, and effect A04, which slides the volume down by 4 on each tick.</p>
+    </div>
+    <div class="cols">
+      <p>Time runs down the screen. Each row is one step, and the speed says how many ticks a row lasts. At 125 BPM and speed 6, a row is 120 milliseconds, and four rows make a beat.</p>
+      <p>Empty cells mean “keep doing what you were doing”. <code>===</code> releases a note. Everything else is typed, so a whole song is a text file you can diff, grep and send in a chat message.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="row-20" aria-labelledby="h-20">
+    <p class="rowno" aria-hidden="true">20</p>
+    <h2 id="h-20">The ten effects you will use first.</h2>
+    <p class="intro">Rowtrack reads the classic effect column, so muscle memory from FastTracker 2 and Impulse Tracker carries over. All 36 are in <code>rowtrack --help effects</code>.</p>
+    <table class="fx panel-inset">
+      <thead><tr><th scope="col">Cmd</th><th scope="col">Name</th><th scope="col">What it does</th><th scope="col">Try</th></tr></thead>
+      <tbody>
+        <tr><td>0xy</td><td>Arpeggio</td><td>Cycles the note, +x and +y semitones every tick. The chord channel above is one note with <code>037</code>.</td><td><code>A-3 06 .. 037</code></td></tr>
+        <tr><td>1xx</td><td>Slide up</td><td>Raises pitch by xx each tick.</td><td><code>C-3 04 .. 108</code></td></tr>
+        <tr><td>2xx</td><td>Slide down</td><td>Lowers pitch by xx each tick. Kick drums are built from this.</td><td><code>C-2 01 .. 220</code></td></tr>
+        <tr><td>3xx</td><td>Glide</td><td>Slides to the new note instead of jumping.</td><td><code>G-4 05 .. 310</code></td></tr>
+        <tr><td>4xy</td><td>Vibrato</td><td>Wobbles pitch at speed x, depth y.</td><td><code>E-4 05 .. 462</code></td></tr>
+        <tr><td>Axy</td><td>Volume slide</td><td>Fades up by x or down by y each tick.</td><td><code>... .. .. A04</code></td></tr>
+        <tr><td>Bxx</td><td>Jump</td><td>Jumps to pattern xx in the order list.</td><td><code>... .. .. B00</code></td></tr>
+        <tr><td>Cxx</td><td>Volume</td><td>Sets channel volume, 00 to 40.</td><td><code>... .. .. C20</code></td></tr>
+        <tr><td>Dxx</td><td>Break</td><td>Ends the pattern early, at row xx of the next.</td><td><code>... .. .. D00</code></td></tr>
+        <tr><td>Fxx</td><td>Tempo</td><td>Below 20 sets speed; from 20 sets BPM.</td><td><code>... .. .. F7D</code></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sec" id="row-30" aria-labelledby="h-30">
+    <p class="rowno" aria-hidden="true">30</p>
+    <h2 id="h-30">Your keyboard is two octaves of piano.</h2>
+    <p class="intro">The bottom row is the lower octave, the row above it the upper one, with sharps on the keys between. Turn sound on, then press the keys or click them.</p>
+    <div class="piano" id="piano" role="group" aria-label="Note keys"></div>
+    <dl class="facts">
+      <div><dt>Octave</dt><dd><kbd>/</kbd> <kbd>*</kbd> on the number pad</dd></div>
+      <div><dt>Note off</dt><dd><kbd>1</kbd> types <code>===</code></dd></div>
+      <div><dt>Jump rows</dt><dd><kbd>PgUp</kbd> <kbd>PgDn</kbd> move 16</dd></div>
+      <div><dt>Record</dt><dd><kbd>Space</kbd> toggles edit mode</dd></div>
+    </dl>
+  </section>
+
+  <section class="sec" id="row-40" aria-labelledby="h-40">
+    <p class="rowno" aria-hidden="true">40</p>
+    <h2 id="h-40">Install it. Open a pattern.</h2>
+    <div class="cmds">
+      <div class="cmd panel-inset"><span class="os">macOS, Linux</span><code>brew install rowtrack</code><button class="key key-small copy" type="button" data-copy="brew install rowtrack"><span class="lbl">Copy</span></button></div>
+      <div class="cmd panel-inset"><span class="os">Any, with Rust</span><code>cargo install rowtrack</code><button class="key key-small copy" type="button" data-copy="cargo install rowtrack"><span class="lbl">Copy</span></button></div>
+      <div class="cmd panel-inset"><span class="os">Windows</span><code>winget install rowtrack</code><button class="key key-small copy" type="button" data-copy="winget install rowtrack"><span class="lbl">Copy</span></button></div>
+      <div class="cmd panel-inset"><span class="os">Then</span><code>rowtrack low-tide.rt</code><button class="key key-small copy" type="button" data-copy="rowtrack low-tide.rt"><span class="lbl">Copy</span></button></div>
+    </div>
+    <ul class="needs">
+      <li>Any terminal at 80 × 24 or larger, with or without colour.</li>
+      <li>Plays through the system audio device, or renders silently to WAV with <code>--render</code>.</li>
+      <li>Opens <code>.rt</code> (plain text), <code>.it</code>, <code>.xm</code> and <code>.mod</code>. Exports WAV, FLAC and MIDI.</li>
+      <li>Works over SSH with <code>--remote-audio</code> streaming sound back to your machine.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="foot">
+  <p><span class="rowno" aria-hidden="true">3F</span> Rowtrack is a fictional product, built as a worked example of <a href="https://github.com/mowfxy/kern">Kern</a>. The pattern, synth and keyboard on this page are real and run in your browser.</p>
+</footer>
+
+<p class="sr-only" aria-live="polite" id="live"></p>
+<script src="app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "project": "wren-street-seed-library",
+  "brand": "Wren Street Seed Library (fictional)",
+  "platform": "web public page",
+  "structure": "opening plate beside display headline; month divider tabs; drawer of index cards that stack as you scroll; borrower's card",
+  "register": "expressive",
+  "materials": ["archival engravings", "chromolithograph", "paper and ink", "stamp motion"],
+  "type": ["Bodoni Moda", "Courier Prime"],
+  "colorSource": "library index card, Vilmorin plates, violet date-stamp ink, drawer oak",
+  "colorStance": "white cards on dark oak; red header rule, blue ruled lines; violet only for the stamp",
+  "theme": "single dark-drawer theme, on purpose",
+  "density": "one large card per variety",
+  "shape": "index cards, double-ruled pocket labels",
+  "controls": "double-ruled typed buttons; manila divider tabs for months",
+  "motion": "rubber date stamp lands when you borrow; cards stack sticky like a drawer; view transition on month change",
+  "imagery": "public domain Vilmorin-Andrieux engravings multiplied onto card stock",
+  "risk": "every variety is a full-size catalogue card with its 1904 plate, not a product grid"
+}
