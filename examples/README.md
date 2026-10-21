@@ -8,6 +8,12 @@ They show reasoning, not templates. Kern does not reuse their layouts, palettes 
 
 [![Poolside on Windows in dark mode, showing the closed spa](poolside/preview-windows-dark.png)](poolside/)
 
+Poolside running natively in Electron on Windows 11, in light and dark. The caption buttons are the real system controls, drawn in the toolbar's own colour:
+
+[![Poolside in Electron on Windows, light](poolside/native-windows-light.png)](poolside/)
+
+[![Poolside in Electron on Windows, dark](poolside/native-windows-dark.png)](poolside/)
+
 [![Holm Ferry, a next-sailing board beside a drawn nautical chart](holm-ferry/preview.png)](holm-ferry/)
 
 | | Poolside | Holm Ferry |
@@ -31,7 +37,7 @@ Then open:
 
 - **Holm Ferry:** <http://127.0.0.1:18790/examples/holm-ferry/>
 - **Poolside in a browser:** <http://127.0.0.1:18790/examples/poolside/>. Add `?os=mac` or `?os=win` to switch the drawn window frame, and `#learner` or `#spa` to open the overdue and closed states.
-- **Poolside as a real desktop app:** `cd examples/poolside && npm install && npm start`.
+- **Poolside as a real desktop app:** `cd examples/poolside && npm install && npm start`. Set `POOLSIDE_THEME=light` or `POOLSIDE_THEME=dark` to force a theme without changing system settings.
 
 In a browser, Poolside draws a stand-in window frame so you can see the chrome treatment: on macOS the traffic lights sit in the sidebar, and on Windows the caption buttons sit in the app's own toolbar row. In Electron the frame is native. `main.js` uses `titleBarStyle: 'hidden'`, inset traffic lights on macOS, a `titleBarOverlay` matched to the toolbar on Windows that updates with the system theme, a drag region on the toolbar, a launch background colour so there is no white flash, and a full native menu.
 
@@ -57,7 +63,7 @@ Still short of 8.5:
 
 - The sidebar is plain. A per-pool depth or volume strip would carry the thesis further.
 - The log has no filter or export, which a real inspector would ask for.
-- The Electron build was not launched in this run, so the native title bar was only checked in code and in the drawn browser frame.
+- The native title bar was checked in Electron 33 on Windows 11 in light and dark. That check moved the overlay up 1 px so the toolbar rule runs under the caption buttons. macOS was checked only in code and in the drawn browser frame.
 
 ### Holm Ferry: 8.1 (web weights)
 

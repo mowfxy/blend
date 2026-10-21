@@ -2,7 +2,11 @@ const { app, BrowserWindow, Menu, nativeTheme } = require('electron');
 const path = require('node:path');
 
 const isMac = process.platform === 'darwin';
+
+// Follows the system theme. POOLSIDE_THEME=light|dark forces one, for testing both without changing OS settings.
+if (['light', 'dark'].includes(process.env.POOLSIDE_THEME)) nativeTheme.themeSource = process.env.POOLSIDE_THEME;
 const TOOLBAR = 52; // px, the toolbar row the window controls sit in
+const OVERLAY = TOOLBAR - 1; // stop above the toolbar's 1px bottom rule so it runs under the caption buttons too
 
 // The same surface colours as --surface and --ink in style.css, so the caption buttons match the toolbar.
 const surface = () => nativeTheme.shouldUseDarkColors
@@ -17,12 +21,12 @@ function createWindow() {
     titleBarStyle: 'hidden',
     ...(isMac
       ? { trafficLightPosition: { x: 18, y: (TOOLBAR - 16) / 2 } }
-      : { titleBarOverlay: { ...surface(), height: TOOLBAR } }),
+      : { titleBarOverlay: { ...surface(), height: OVERLAY } }),
     webPreferences: { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, sandbox: true },
   });
 
   nativeTheme.on('updated', () => {
-    if (!isMac) win.setTitleBarOverlay({ ...surface(), height: TOOLBAR });
+    if (!isMac) win.setTitleBarOverlay({ ...surface(), height: OVERLAY });
     win.setBackgroundColor(surface().color);
   });
 

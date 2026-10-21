@@ -38,6 +38,7 @@ for manifest in ('plugin.json', 'marketplace.json'):
         errors.append(f'.claude-plugin/{manifest}: {error}')
 
 docs = list((ROOT / 'skills').rglob('*.md')) + list((ROOT / 'docs').rglob('*.md')) + list((ROOT / 'evals').rglob('*.md')) + list((ROOT / 'examples').rglob('*.md')) + list(ROOT.glob('*.md'))
+docs = [p for p in docs if 'node_modules' not in p.parts]
 for path in docs:
     text = path.read_text(encoding='utf-8')
     for target in re.findall(r'\]\(([^)\s]+)\)', text):
