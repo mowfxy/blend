@@ -1,0 +1,15 @@
+{
+  "project": "poolside",
+  "brand": "Poolside (fictional)",
+  "platform": "desktop electron macos windows",
+  "structure": "sidebar of pools, reading tiles, ruled log",
+  "type": ["system-ui", "Barlow Condensed"],
+  "colorSource": "pool test comparator reagents and tiled lane line",
+  "colorStance": "functional cool grout neutrals, lane-line ink accent, reagent data colour",
+  "theme": "light+dark system",
+  "density": "desktop with wet-hand targets",
+  "shape": "6px controls, concentric panels, 1px log rules",
+  "motion": "quick exact settles, due ring",
+  "imagery": "none, numerals as image",
+  "risk": "readings set as deck depth markings, pH tile filled with its comparator colour"
+}

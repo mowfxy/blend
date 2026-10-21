@@ -1,0 +1,9 @@
+{
+  "name": "poolside-kern-example",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Kern example: a pool water-testing log as a desktop app (fictional).",
+  "main": "main.js",
+  "scripts": { "start": "electron ." },
+  "devDependencies": { "electron": "^33.0.0" }
+}

@@ -69,6 +69,13 @@ Kern does not interview you about taste. It decides, builds, and tells you the t
 | [kern-critique](skills/kern-critique/SKILL.md) | The Kern Score, before-and-after ratings, the look-and-fix loop |
 | [kern-ship](skills/kern-ship/SKILL.md) | Working, honest, accessible, fast, found and secure |
 
+## Examples
+
+There are two fictional products, built by running the method from scratch, each with its full record in `.kern/` ([details and scores](examples/README.md)):
+
+- **[Poolside](examples/poolside/):** an Electron desktop app for logging pool water tests. Its title bar is part of the app on macOS and Windows, and its pH reading is filled with the test kit's own colour.
+- **[Holm Ferry](examples/holm-ferry/):** a website for an island ferry. It is a drawn nautical chart and a live next-sailing board, with no hero photo or feature cards.
+
 ## Tools
 
 ```sh
@@ -84,6 +91,7 @@ node skills/kern/scripts/kern.mjs audit src/                     # median tells,
 - `.claude-plugin/`: the Claude Code plugin and marketplace manifests.
 - `scripts/`: the installer, its tests and the validator.
 - `evals/`: briefs and a protocol for measuring quality and divergence.
+- `examples/`: two worked examples with their records.
 - `docs/audit.md`: why Kern was built, with before and after ratings.
 
 ```sh

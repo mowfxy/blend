@@ -1,4 +1,4 @@
-.kern/
+/.kern/
 .maintainer/
 __pycache__/
 *.pyc
